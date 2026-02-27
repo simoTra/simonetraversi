@@ -81,3 +81,22 @@
 - Typecheck passes
 
 **Next up:** US-006 (Projects section) — create components/Projects.tsx with responsive grid, 3 project cards, tech tag pills, hover border effect, GSAP ScrollTrigger stagger animation.
+
+## 2026-02-27 — US-006: Projects section
+
+**Status:** COMPLETE
+
+**What was done:**
+- Created `components/Projects.tsx` as a `'use client'` component
+- Section with `id='projects'` and `py-24 md:py-32 px-6` padding
+- Heading "Projects" at `text-4xl md:text-6xl font-bold`
+- Responsive grid: `grid-cols-1` (mobile) → `md:grid-cols-2` → `lg:grid-cols-3` with `gap-8`
+- Three placeholder project cards: DataStream Platform, DesignKit UI, ShipFast CLI
+- Each card has: `aspect-video bg-[#D1E0E8]/20` image placeholder, title (`text-[#F4F4F4] font-semibold text-xl`), description (`text-[#757575] text-sm line-clamp-2`), tech tag pills (`bg-[#1A1A1A] border border-[#757575] text-[#D1E0E8] text-xs px-2 py-1 rounded`), and `View →` link (`text-[#FF4400]`)
+- Card hover: `border-[#757575]` → `hover:border-[#FF4400]` via `transition-colors duration-300`
+- GSAP ScrollTrigger stagger: `.project-card` elements animate `y:40 opacity:0 → y:0 opacity:1` with `stagger:0.1`
+- `gsap.registerPlugin(ScrollTrigger)` called at module level
+- Updated `app/page.tsx` to import and render `<Projects />` below `<Experience />`
+- Typecheck passes
+
+**Next up:** US-007 (Resume section) — create components/Resume.tsx with download PDF button, skills block (3 groups × 4–5 tags), and education entry.
