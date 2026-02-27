@@ -1,0 +1,192 @@
+{
+  "project": "simonetraversi",
+  "branchName": "ralph/personal-portfolio",
+  "description": "Single-page personal portfolio website — dark mode, bold typography, GSAP animations, responsive. Sections: Hero, About, Experience/Timeline, Projects, Resume, Contact. Stack: Next.js + Tailwind v4 + GSAP.",
+  "userStories": [
+    {
+      "id": "US-001",
+      "title": "Set up GSAP and global design tokens",
+      "description": "As a developer, I need GSAP installed and a dark theme baseline with CSS custom properties so all subsequent stories can build on a consistent foundation.",
+      "acceptanceCriteria": [
+        "Install gsap and @gsap/react via npm",
+        "globals.css defines CSS custom properties: --color-bg: #1A1A1A, --color-text: #F4F4F4, --color-accent: #FF4400, --color-light: #D1E0E8, --color-muted: #757575",
+        "globals.css applies to html: background-color: var(--color-bg), color: var(--color-text)",
+        "globals.css registers Tailwind utilities for each token (e.g. bg-[#FF4400] or @theme inline block with CSS variables) so colors are usable in classNames",
+        "globals.css sets html { scroll-behavior: smooth; overflow-x: hidden; }",
+        "layout.tsx sets lang='en', applies base font (Inter or DM Sans via next/font), and sets className with bg-[#1A1A1A] text-[#F4F4F4]",
+        "app/page.tsx is emptied to a minimal shell (single root div) ready for section components",
+        "Typecheck passes"
+      ],
+      "priority": 1,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-002",
+      "title": "Sticky navigation bar",
+      "description": "As a visitor scrolling the page, I want a sticky nav so I can jump to any section at any time.",
+      "acceptanceCriteria": [
+        "Create components/Nav.tsx as a 'use client' component",
+        "Fixed top nav with site name/initials on the left and links on the right: About, Experience, Projects, Resume, Contact",
+        "Nav links use href='#about', '#experience', '#projects', '#resume', '#contact' for in-page scroll",
+        "On scroll past 80px, nav gains background: bg-[#1A1A1A]/90 backdrop-blur-sm transition",
+        "Active section link is highlighted with text-[#FF4400] (tracked via IntersectionObserver)",
+        "Mobile: hamburger button (3 lines icon) visible below md breakpoint; clicking it toggles a full-width dropdown menu with all nav links",
+        "Dropdown closes when a nav link is clicked",
+        "Nav is imported and rendered in app/page.tsx",
+        "Typecheck passes",
+        "Verify in browser using dev-browser skill"
+      ],
+      "priority": 2,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-003",
+      "title": "Hero section",
+      "description": "As a visitor, I want to immediately understand who this person is and feel impressed by the first screen.",
+      "acceptanceCriteria": [
+        "Create components/Hero.tsx as a 'use client' component",
+        "Full-viewport section (min-h-screen) with id='hero'",
+        "Large headline: name placeholder 'Simone Traversi' at text-5xl (mobile) md:text-7xl lg:text-9xl font-bold",
+        "Role/tagline line below headline at text-xl md:text-2xl text-[#757575], placeholder: 'Full-Stack Developer & Creative Engineer'",
+        "Short positioning statement (2 lines, placeholder text) at text-base md:text-lg text-[#D1E0E8]",
+        "Two CTA buttons: 'View Work' (href='#projects') and 'Get in Touch' (href='#contact'); primary button uses bg-[#FF4400] text-[#F4F4F4], secondary uses border border-[#F4F4F4]",
+        "Buttons stack vertically (flex-col) on mobile, side by side (flex-row gap-4) on md+",
+        "GSAP entrance animation on mount: headline, tagline, description, and buttons stagger in from y:60 opacity:0 using useGSAP hook",
+        "gsap.registerPlugin(ScrollTrigger) called once in this file",
+        "Hero is imported and rendered in app/page.tsx below Nav",
+        "Typecheck passes",
+        "Verify in browser using dev-browser skill"
+      ],
+      "priority": 3,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-004",
+      "title": "About section",
+      "description": "As a visitor, I want to learn about who this person is, their background, and what they stand for.",
+      "acceptanceCriteria": [
+        "Create components/About.tsx as a 'use client' component",
+        "Section with id='about', py-24 md:py-32 padding",
+        "Section heading 'About' at text-4xl md:text-6xl font-bold with a short orange underline accent (border-b-2 border-[#FF4400] inline-block)",
+        "Two-column layout on md+: left = square image placeholder (aspect-square bg-[#D1E0E8]/20 w-full), right = text block",
+        "Single column on mobile: image on top, text below",
+        "Text block: bio paragraph placeholder (2–3 sentences), followed by 4 trait/value bullet points (e.g. '→ Problem solver', '→ Clean code advocate')",
+        "Bullet points use text-[#FF4400] for the arrow/symbol",
+        "GSAP ScrollTrigger: section container fades and slides up (y:40, opacity:0 → y:0, opacity:1) when it enters the viewport",
+        "About is imported and rendered in app/page.tsx",
+        "Typecheck passes",
+        "Verify in browser using dev-browser skill"
+      ],
+      "priority": 4,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-005",
+      "title": "Experience / Timeline section",
+      "description": "As a recruiter or client, I want to see a clear career timeline to assess seniority and trajectory.",
+      "acceptanceCriteria": [
+        "Create components/Experience.tsx as a 'use client' component",
+        "Section with id='experience', py-24 md:py-32 padding",
+        "Section heading 'Experience' at text-4xl md:text-6xl font-bold",
+        "Vertical timeline with a continuous left-edge line (2px bg-[#757575])",
+        "At least 3 placeholder timeline entries; each entry has: colored dot node (bg-[#FF4400] w-3 h-3 rounded-full on the line), company name (text-[#F4F4F4] font-semibold), role title (text-[#D1E0E8]), date range (text-[#757575] text-sm), 2 bullet points of responsibilities (text-[#D1E0E8] text-sm)",
+        "On mobile: entries are full-width, line runs down the left edge",
+        "On desktop: entries are indented with comfortable left padding",
+        "GSAP ScrollTrigger: each entry animates in sequentially with stagger (x:-30, opacity:0 → x:0, opacity:1) as user scrolls down",
+        "Experience is imported and rendered in app/page.tsx",
+        "Typecheck passes",
+        "Verify in browser using dev-browser skill"
+      ],
+      "priority": 5,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-006",
+      "title": "Projects section",
+      "description": "As a visitor, I want to browse selected projects and understand what was built, what stack was used, and where to see it.",
+      "acceptanceCriteria": [
+        "Create components/Projects.tsx as a 'use client' component",
+        "Section with id='projects', py-24 md:py-32 padding",
+        "Section heading 'Projects' at text-4xl md:text-6xl font-bold",
+        "Responsive grid: 1 column (mobile) → 2 columns (md) → 3 columns (lg)",
+        "At least 3 placeholder project cards",
+        "Each card: 16:9 image placeholder (bg-[#D1E0E8]/20), project title (text-[#F4F4F4] font-semibold text-xl), short description (2 lines, text-[#757575] text-sm), tech tag pills (bg-[#1A1A1A] border border-[#757575] text-[#D1E0E8] text-xs px-2 py-1 rounded), and a 'View →' link in text-[#FF4400]",
+        "Card hover: border changes to border-[#FF4400] (CSS transition, no GSAP needed)",
+        "GSAP ScrollTrigger: cards stagger in (y:40, opacity:0 with stagger:0.1) when section enters viewport",
+        "Projects is imported and rendered in app/page.tsx",
+        "Typecheck passes",
+        "Verify in browser using dev-browser skill"
+      ],
+      "priority": 6,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-007",
+      "title": "Resume section",
+      "description": "As a recruiter, I want to view or download a resume directly from the page without navigating away.",
+      "acceptanceCriteria": [
+        "Create components/Resume.tsx as a client or server component (no animations required beyond static layout)",
+        "Create public/resume.pdf as a placeholder empty file",
+        "Section with id='resume', py-24 md:py-32 padding",
+        "Section heading 'Resume' at text-4xl md:text-6xl font-bold",
+        "Prominent 'Download PDF' button (bg-[#FF4400] text-[#F4F4F4] px-8 py-4) linking to /resume.pdf with download attribute",
+        "Skills block below button: 3 skill groups (e.g. 'Languages', 'Frameworks', 'Tools') each with 4–5 placeholder skill tags (same pill style as project tech tags)",
+        "Skill groups displayed in 1 column (mobile) → 3 columns (md+)",
+        "Education block: one placeholder entry with institution, degree, and year in text-[#757575]",
+        "Resume is imported and rendered in app/page.tsx",
+        "Typecheck passes",
+        "Verify in browser using dev-browser skill"
+      ],
+      "priority": 7,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-008",
+      "title": "Contact section",
+      "description": "As a potential client or employer, I want an easy way to reach out directly from the page.",
+      "acceptanceCriteria": [
+        "Create components/Contact.tsx as a 'use client' component",
+        "Section with id='contact', py-24 md:py-32 padding",
+        "Large heading placeholder: 'Let's work together.' at text-4xl md:text-6xl font-bold",
+        "Contact form with controlled inputs: Name (text), Email (email), Message (textarea min 4 rows)",
+        "All inputs styled: bg-transparent border-b border-[#757575] text-[#F4F4F4] focus:border-[#FF4400] outline-none w-full py-3",
+        "Submit button: bg-[#FF4400] text-[#F4F4F4] px-8 py-4 font-semibold",
+        "On submit (preventDefault): button text changes to 'Message sent!' and form inputs are cleared; no real API call",
+        "Social links row below the form: GitHub, LinkedIn, X/Twitter icons (SVG or text links) with href='#' placeholder; links styled text-[#757575] hover:text-[#FF4400]",
+        "Form is full-width on mobile, max-w-xl centered on desktop",
+        "GSAP ScrollTrigger: heading animates in from y:40 opacity:0 on scroll",
+        "Contact is imported and rendered in app/page.tsx",
+        "Typecheck passes",
+        "Verify in browser using dev-browser skill"
+      ],
+      "priority": 8,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-009",
+      "title": "Footer",
+      "description": "As a visitor who has reached the bottom, I want to see a minimal footer with credits and a back-to-top link.",
+      "acceptanceCriteria": [
+        "Create components/Footer.tsx as a server or client component",
+        "Footer with border-t border-[#757575] py-8 px-6",
+        "Left side: copyright text '© 2025 Simone Traversi' in text-[#757575] text-sm",
+        "Right side: 'Back to top ↑' link with href='#hero' in text-[#757575] hover:text-[#FF4400] text-sm",
+        "Two items flex row on md+; stacked on mobile",
+        "Footer is imported and rendered at the bottom of app/page.tsx",
+        "Typecheck passes",
+        "Verify in browser using dev-browser skill"
+      ],
+      "priority": 9,
+      "passes": false,
+      "notes": ""
+    }
+  ]
+}
