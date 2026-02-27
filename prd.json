@@ -18,8 +18,8 @@
         "Typecheck passes"
       ],
       "priority": 1,
-      "passes": false,
-      "notes": ""
+      "passes": true,
+      "notes": "Completed 2026-02-27: gsap@3.14.2 and @gsap/react@2.1.2 installed. globals.css updated with CSS custom properties and Tailwind theme tokens. layout.tsx uses DM Sans via next/font, lang='en', bg-[#1A1A1A] text-[#F4F4F4]. page.tsx emptied to minimal shell. Typecheck passes."
     },
     {
       "id": "US-002",

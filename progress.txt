@@ -1,0 +1,12 @@
+## 2026-02-27 — US-001: Set up GSAP and global design tokens
+
+**Status:** COMPLETE
+
+**What was done:**
+- Added `typecheck` (tsc --noEmit) and `test` scripts to package.json
+- Installed `gsap@3.14.2` and `@gsap/react@2.1.2` via npm
+- Rewrote `app/globals.css`: CSS custom properties (--color-bg, --color-text, --color-accent, --color-light, --color-muted), @theme inline block for Tailwind v4 token registration, html base styles (background-color, color, scroll-behavior: smooth, overflow-x: hidden)
+- Updated `app/layout.tsx`: switched to DM Sans font via next/font/google, lang="en", body has bg-[#1A1A1A] text-[#F4F4F4]
+- Emptied `app/page.tsx` to a single root `<div />` shell
+
+**Next up:** US-002 (Sticky navigation bar) — create components/Nav.tsx as 'use client', fixed top nav with scroll behavior, active section tracking via IntersectionObserver, mobile hamburger menu.
