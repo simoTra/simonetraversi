@@ -10,3 +10,18 @@
 - Emptied `app/page.tsx` to a single root `<div />` shell
 
 **Next up:** US-002 (Sticky navigation bar) — create components/Nav.tsx as 'use client', fixed top nav with scroll behavior, active section tracking via IntersectionObserver, mobile hamburger menu.
+
+## 2026-02-27 — US-002: Sticky navigation bar
+
+**Status:** COMPLETE
+
+**What was done:**
+- Created `components/Nav.tsx` as a `'use client'` component
+- Fixed top nav (`fixed top-0 left-0 right-0 z-50`) with site initials "ST" on the left and links (About, Experience, Projects, Resume, Contact) on the right
+- Scroll listener: adds `bg-[#1A1A1A]/90 backdrop-blur-sm` after scrolling past 80px
+- Active section highlighted with `text-[#FF4400]` via `IntersectionObserver` watching all 5 section IDs
+- Mobile hamburger button (3 stacked lines) visible below `md` breakpoint; toggles a full-width dropdown; dropdown closes on link click
+- Updated `app/page.tsx` to import and render `<Nav />`
+- Typecheck passes, no tests configured
+
+**Next up:** US-003 (Hero section) — create components/Hero.tsx with full-viewport layout, large headline, tagline, CTA buttons, and GSAP entrance animation.

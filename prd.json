@@ -38,8 +38,8 @@
         "Verify in browser using dev-browser skill"
       ],
       "priority": 2,
-      "passes": false,
-      "notes": ""
+      "passes": true,
+      "notes": "Completed 2026-02-27: Created components/Nav.tsx as 'use client'. Fixed top nav with site initials 'ST' on left and About/Experience/Projects/Resume/Contact links on right. Scroll past 80px adds bg-[#1A1A1A]/90 backdrop-blur-sm. Active section tracked via IntersectionObserver with text-[#FF4400] highlight. Mobile hamburger (3 lines) toggles full-width dropdown; dropdown closes on link click. Nav imported and rendered in app/page.tsx. Typecheck passes."
     },
     {
       "id": "US-003",
