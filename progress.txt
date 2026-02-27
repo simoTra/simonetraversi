@@ -62,3 +62,22 @@
 - Typecheck passes
 
 **Next up:** US-005 (Experience/Timeline section) — create components/Experience.tsx with vertical timeline, dot nodes, staggered GSAP ScrollTrigger animation.
+
+## 2026-02-27 — US-005: Experience / Timeline section
+
+**Status:** COMPLETE
+
+**What was done:**
+- Created `components/Experience.tsx` as a `'use client'` component
+- Section with `id='experience'` and `py-24 md:py-32 px-6` padding
+- Heading "Experience" at `text-4xl md:text-6xl font-bold`
+- Vertical timeline: absolute left line (`left-1.5 w-px h-full bg-[#757575]`)
+- Three placeholder entries: Acme Corp, Bright Digital, StartupXYZ
+- Each entry has: `bg-[#FF4400] w-3 h-3 rounded-full` dot on the line, company name (`text-[#F4F4F4] font-semibold`), role title (`text-[#D1E0E8]`), date range (`text-[#757575] text-sm`), 2 bullet points (`text-[#D1E0E8] text-sm`)
+- Mobile: `pl-10`; desktop: `md:pl-16`
+- GSAP ScrollTrigger stagger: `.timeline-entry` elements animate from `x:-30 opacity:0` with `stagger:0.2` as section enters viewport
+- `gsap.registerPlugin(ScrollTrigger)` called at module level
+- Updated `app/page.tsx` to import and render `<Experience />` below `<About />`
+- Typecheck passes
+
+**Next up:** US-006 (Projects section) — create components/Projects.tsx with responsive grid, 3 project cards, tech tag pills, hover border effect, GSAP ScrollTrigger stagger animation.
