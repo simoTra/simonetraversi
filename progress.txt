@@ -44,3 +44,21 @@
 - Typecheck passes
 
 **Next up:** US-004 (About section) — create components/About.tsx with two-column layout, bio text, trait bullets, image placeholder, and GSAP ScrollTrigger animation.
+
+## 2026-02-27 — US-004: About section
+
+**Status:** COMPLETE
+
+**What was done:**
+- Created `components/About.tsx` as a `'use client'` component
+- Section with `id='about'` and `py-24 md:py-32 px-6` padding
+- Heading "About" at `text-4xl md:text-6xl font-bold` with `border-b-2 border-[#FF4400] inline-block` underline accent
+- Two-column `grid` on `md+`: left = `aspect-square bg-[#D1E0E8]/20` image placeholder, right = bio paragraph + 4 trait bullet points
+- Bullet points use `text-[#FF4400]` for the `→` arrow symbol
+- Single column on mobile; image on top, text below
+- GSAP ScrollTrigger: container fades and slides up (`y:40 opacity:0 → y:0 opacity:1`) when entering the viewport
+- `gsap.registerPlugin(ScrollTrigger)` called at module level
+- Updated `app/page.tsx` to import and render `<About />` below `<Hero />`
+- Typecheck passes
+
+**Next up:** US-005 (Experience/Timeline section) — create components/Experience.tsx with vertical timeline, dot nodes, staggered GSAP ScrollTrigger animation.
