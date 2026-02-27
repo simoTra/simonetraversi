@@ -60,8 +60,8 @@
         "Verify in browser using dev-browser skill"
       ],
       "priority": 3,
-      "passes": false,
-      "notes": ""
+      "passes": true,
+      "notes": "Completed 2026-02-27: Created components/Hero.tsx as 'use client'. Full-viewport section (min-h-screen) with id='hero'. Headline 'Simone Traversi' at text-5xl/md:text-7xl/lg:text-9xl font-bold. Tagline at text-xl/md:text-2xl text-[#757575]. Positioning statement at text-base/md:text-lg text-[#D1E0E8]. CTA buttons 'View Work' (bg-[#FF4400]) and 'Get in Touch' (border border-[#F4F4F4]); flex-col on mobile, flex-row gap-4 on md+. GSAP entrance animation via useGSAP: headline, tagline, description, buttons stagger from y:60 opacity:0. gsap.registerPlugin(ScrollTrigger) called. Hero imported and rendered in app/page.tsx. Typecheck passes."
     },
     {
       "id": "US-004",

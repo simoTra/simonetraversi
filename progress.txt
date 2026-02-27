@@ -25,3 +25,22 @@
 - Typecheck passes, no tests configured
 
 **Next up:** US-003 (Hero section) — create components/Hero.tsx with full-viewport layout, large headline, tagline, CTA buttons, and GSAP entrance animation.
+
+## 2026-02-27 — US-003: Hero section
+
+**Status:** COMPLETE
+
+**What was done:**
+- Created `components/Hero.tsx` as a `'use client'` component
+- Full-viewport section (`min-h-screen flex items-center`) with `id='hero'`
+- Headline "Simone Traversi" at `text-5xl md:text-7xl lg:text-9xl font-bold`
+- Tagline "Full-Stack Developer & Creative Engineer" at `text-xl md:text-2xl text-[#757575]`
+- Short positioning statement (2 lines) at `text-base md:text-lg text-[#D1E0E8]`
+- CTA buttons: "View Work" (`bg-[#FF4400] text-[#F4F4F4]`) linking to `#projects`; "Get in Touch" (`border border-[#F4F4F4]`) linking to `#contact`
+- Buttons `flex-col` on mobile, `flex-row gap-4` on `md+`
+- GSAP entrance via `useGSAP`: all `.hero-animate` elements stagger from `y:60 opacity:0` on mount
+- `gsap.registerPlugin(ScrollTrigger)` called at module level
+- Updated `app/page.tsx` to import and render `<Hero />` below `<Nav />`
+- Typecheck passes
+
+**Next up:** US-004 (About section) — create components/About.tsx with two-column layout, bio text, trait bullets, image placeholder, and GSAP ScrollTrigger animation.
