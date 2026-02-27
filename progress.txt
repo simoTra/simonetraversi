@@ -100,3 +100,21 @@
 - Typecheck passes
 
 **Next up:** US-007 (Resume section) — create components/Resume.tsx with download PDF button, skills block (3 groups × 4–5 tags), and education entry.
+
+## 2026-02-27 — US-007: Resume section
+
+**Status:** COMPLETE
+
+**What was done:**
+- Created `components/Resume.tsx` as a server component (no animations required)
+- Section with `id='resume'` and `py-24 md:py-32 px-6` padding
+- Heading "Resume" at `text-4xl md:text-6xl font-bold`
+- Prominent `<a href="/resume.pdf" download>Download PDF</a>` button styled `bg-[#FF4400] text-[#F4F4F4] px-8 py-4 font-semibold`
+- Skills block with 3 groups (Languages: TypeScript/JavaScript/Python/SQL/Rust, Frameworks: Next.js/React/Node.js/FastAPI/Tailwind CSS, Tools: Git/Docker/PostgreSQL/Redis/AWS), each group with skill tag pills (`bg-[#1A1A1A] border border-[#757575] text-[#D1E0E8] text-xs px-2 py-1 rounded`)
+- Skill groups in `grid-cols-1` (mobile) → `md:grid-cols-3`
+- Education block: University of Milan, B.Sc. Computer Science, 2018–2022 in `text-[#757575]`
+- Created `public/resume.pdf` as a placeholder empty file
+- Updated `app/page.tsx` to import and render `<Resume />` below `<Projects />`
+- Typecheck passes
+
+**Next up:** US-008 (Contact section) — create components/Contact.tsx with controlled form, social links, and GSAP ScrollTrigger heading animation.
