@@ -39,18 +39,53 @@ const entries = [
 
 export default function Experience() {
   const sectionRef = useRef<HTMLElement>(null);
+  const timelineLineRef = useRef<HTMLDivElement>(null);
 
   useGSAP(
     () => {
+      // Timeline line draw
+      if (timelineLineRef.current) {
+        gsap.from(timelineLineRef.current, {
+          scaleY: 0,
+          transformOrigin: 'top center',
+          ease: 'none',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 80%',
+            end: 'bottom 80%',
+            scrub: 1,
+          },
+        });
+      }
+
+      // Dot nodes — individual ScrollTrigger per dot
+      const dots = sectionRef.current?.querySelectorAll('.timeline-dot');
+      dots?.forEach((dot) => {
+        gsap.from(dot, {
+          scale: 0,
+          ease: 'elastic.out(1.2, 0.5)',
+          duration: 0.8,
+          scrollTrigger: {
+            trigger: dot,
+            start: 'top 85%',
+            toggleActions: 'play none none none',
+          },
+        });
+      });
+
+      // Entry cards
       gsap.from('.timeline-entry', {
-        x: -30,
+        x: -40,
+        y: 60,
+        scale: 0.95,
         opacity: 0,
-        duration: 0.7,
-        ease: 'power3.out',
         stagger: 0.2,
+        duration: 0.8,
+        ease: 'power3.out',
         scrollTrigger: {
           trigger: sectionRef.current,
           start: 'top 75%',
+          toggleActions: 'play none none none',
         },
       });
     },
@@ -60,12 +95,15 @@ export default function Experience() {
   return (
     <section id="experience" ref={sectionRef} className="py-24 md:py-32 px-6">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl md:text-6xl font-bold mb-16">Experience</h2>
+        <h2 className="h2-display mb-16">Experience</h2>
 
         {/* Timeline */}
         <div className="relative">
           {/* Continuous left line */}
-          <div className="absolute top-0 left-1.5 w-px h-full bg-[#757575]" />
+          <div
+            ref={timelineLineRef}
+            className="absolute top-0 left-1.5 w-px h-full bg-[#757575] origin-top"
+          />
 
           <div className="space-y-12">
             {entries.map((entry) => (
@@ -74,7 +112,7 @@ export default function Experience() {
                 className="timeline-entry relative pl-10 md:pl-16"
               >
                 {/* Dot node */}
-                <div className="absolute left-0 top-1.5 w-3 h-3 rounded-full bg-[#FF4400]" />
+                <div className="timeline-dot absolute left-0 top-1.5 w-3 h-3 rounded-full bg-[#FF4400]" />
 
                 <div>
                   <p className="text-[#757575] text-sm mb-1">{entry.dates}</p>

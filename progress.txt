@@ -146,7 +146,7 @@
 **What was done:**
 - Created `components/Footer.tsx` as a server component (no client-side behavior needed)
 - Footer with `border-t border-[#757575] py-8 px-6`
-- Left side: copyright `© 2025 Simone Traversi` in `text-[#757575] text-sm`
+- Left side: copyright `© 2026 Simone Traversi` in `text-[#757575] text-sm`
 - Right side: `Back to top ↑` link with `href='#hero'` styled `text-[#757575] hover:text-[#FF4400] text-sm transition-colors duration-200`
 - Layout: `flex-col` on mobile; `md:flex-row md:justify-between` on md+
 - Updated `app/page.tsx` to import and render `<Footer />` at the bottom

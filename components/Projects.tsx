@@ -36,17 +36,57 @@ export default function Projects() {
 
   useGSAP(
     () => {
+      // Card entrance
       gsap.from('.project-card', {
-        y: 40,
+        y: 80,
+        scale: 0.9,
+        rotation: -2,
         opacity: 0,
-        duration: 0.7,
+        stagger: 0.12,
+        duration: 0.8,
         ease: 'power3.out',
-        stagger: 0.1,
         scrollTrigger: {
           trigger: sectionRef.current,
           start: 'top 75%',
+          toggleActions: 'play none none none',
         },
       });
+
+      // 3D tilt on mousemove
+      const cards = sectionRef.current?.querySelectorAll<HTMLElement>('.project-card');
+      const cleanupFns: (() => void)[] = [];
+
+      cards?.forEach((card) => {
+        gsap.set(card, { transformPerspective: 800 });
+
+        const xTo = gsap.quickTo(card, 'rotationY', { duration: 0.4, ease: 'power2.out' });
+        const yTo = gsap.quickTo(card, 'rotationX', { duration: 0.4, ease: 'power2.out' });
+
+        function onMouseMove(e: MouseEvent) {
+          const rect = card.getBoundingClientRect();
+          const cx = rect.left + rect.width / 2;
+          const cy = rect.top + rect.height / 2;
+          const dx = ((e.clientX - cx) / (rect.width / 2)) * 8;
+          const dy = -((e.clientY - cy) / (rect.height / 2)) * 8;
+          xTo(dx);
+          yTo(dy);
+        }
+
+        function onMouseLeave() {
+          xTo(0);
+          yTo(0);
+        }
+
+        card.addEventListener('mousemove', onMouseMove);
+        card.addEventListener('mouseleave', onMouseLeave);
+
+        cleanupFns.push(() => {
+          card.removeEventListener('mousemove', onMouseMove);
+          card.removeEventListener('mouseleave', onMouseLeave);
+        });
+      });
+
+      return () => cleanupFns.forEach((fn) => fn());
     },
     { scope: sectionRef }
   );
@@ -54,16 +94,16 @@ export default function Projects() {
   return (
     <section id="projects" ref={sectionRef} className="py-24 md:py-32 px-6">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl md:text-6xl font-bold mb-16">Projects</h2>
+        <h2 className="h2-display mb-16">Projects</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
             <div
               key={project.title}
-              className="project-card border border-[#757575] rounded-lg overflow-hidden transition-colors duration-300 hover:border-[#FF4400]"
+              className="project-card border border-[#757575] rounded-lg transition-colors duration-300 hover:border-[#FF4400]"
             >
               {/* 16:9 image placeholder */}
-              <div className="aspect-video bg-[#D1E0E8]/20" />
+              <div className="aspect-video bg-[#D1E0E8]/20 rounded-t-lg" />
 
               <div className="p-6 flex flex-col gap-3">
                 <h3 className="text-[#F4F4F4] font-semibold text-xl">

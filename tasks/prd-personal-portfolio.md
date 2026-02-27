@@ -156,7 +156,7 @@ A single-page personal portfolio website for Simone Traversi — designed to lan
 
 **Acceptance Criteria:**
 
-- [ ] Footer with copyright line: `© 2025 Simone Traversi`
+- [ ] Footer with copyright line: `© 2026 Simone Traversi`
 - [ ] "Back to top" link that smoothly scrolls to `#hero`
 - [ ] Typecheck passes
 - [ ] Verify in browser using dev-browser skill

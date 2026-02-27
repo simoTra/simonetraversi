@@ -4,12 +4,17 @@ import { useRef, useState } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { SplitText } from 'gsap/SplitText';
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, SplitText);
 
 export default function Contact() {
   const sectionRef = useRef<HTMLElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
+  const nameRef = useRef<HTMLDivElement>(null);
+  const emailRef = useRef<HTMLDivElement>(null);
+  const messageRef = useRef<HTMLDivElement>(null);
+  const submitRef = useRef<HTMLDivElement>(null);
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -18,16 +23,57 @@ export default function Contact() {
 
   useGSAP(
     () => {
-      gsap.from(headingRef.current, {
-        y: 40,
-        opacity: 0,
-        duration: 0.8,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 75%',
-        },
-      });
+      // H2 SplitText char reveal
+      let split: SplitText | null = null;
+      if (headingRef.current) {
+        split = new SplitText(headingRef.current, { type: 'chars', mask: 'chars' });
+        gsap.from(split.chars, {
+          y: 80,
+          rotation: 5,
+          opacity: 0,
+          stagger: 0.04,
+          ease: 'back.out(1.4)',
+          duration: 0.8,
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 80%',
+            toggleActions: 'play none none none',
+          },
+        });
+      }
+
+      // Form fields — alternating sides
+      if (nameRef.current && messageRef.current) {
+        gsap.from([nameRef.current, messageRef.current], {
+          x: -50,
+          opacity: 0,
+          stagger: 0.2,
+          duration: 0.7,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 75%',
+            toggleActions: 'play none none none',
+          },
+        });
+      }
+
+      if (emailRef.current && submitRef.current) {
+        gsap.from([emailRef.current, submitRef.current], {
+          x: 50,
+          opacity: 0,
+          stagger: 0.2,
+          duration: 0.7,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 75%',
+            toggleActions: 'play none none none',
+          },
+        });
+      }
+
+      return () => split?.revert();
     },
     { scope: sectionRef }
   );
@@ -46,13 +92,13 @@ export default function Contact() {
   return (
     <section id="contact" ref={sectionRef} className="py-24 md:py-32 px-6">
       <div className="max-w-6xl mx-auto">
-        <h2 ref={headingRef} className="text-4xl md:text-6xl font-bold mb-16">
+        <h2 ref={headingRef} className="h2-display mb-16">
           Let&apos;s work together.
         </h2>
 
         <div className="max-w-xl mx-auto md:mx-0">
           <form onSubmit={handleSubmit} className="flex flex-col gap-8">
-            <div>
+            <div ref={nameRef}>
               <input
                 type="text"
                 placeholder="Name"
@@ -62,7 +108,7 @@ export default function Contact() {
                 className={inputClass}
               />
             </div>
-            <div>
+            <div ref={emailRef}>
               <input
                 type="email"
                 placeholder="Email"
@@ -72,7 +118,7 @@ export default function Contact() {
                 className={inputClass}
               />
             </div>
-            <div>
+            <div ref={messageRef}>
               <textarea
                 placeholder="Message"
                 value={message}
@@ -82,7 +128,7 @@ export default function Contact() {
                 className={`${inputClass} resize-none`}
               />
             </div>
-            <div>
+            <div ref={submitRef}>
               <button
                 type="submit"
                 className="bg-[#FF4400] text-[#F4F4F4] px-8 py-4 font-semibold"

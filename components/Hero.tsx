@@ -4,49 +4,99 @@ import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { SplitText } from 'gsap/SplitText';
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, SplitText);
 
 export default function Hero() {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const h1Ref = useRef<HTMLHeadingElement>(null);
+  const subtitleRef = useRef<HTMLParagraphElement>(null);
+  const descRef = useRef<HTMLParagraphElement>(null);
+  const buttonsRef = useRef<HTMLDivElement>(null);
 
   useGSAP(
     () => {
-      const elements = containerRef.current?.querySelectorAll('.hero-animate');
-      if (!elements) return;
+      if (!h1Ref.current || !subtitleRef.current || !descRef.current || !buttonsRef.current) return;
 
-      gsap.from(elements, {
-        y: 60,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.15,
-        ease: 'power3.out',
+      // Split h1 by words — clip-path wipe per word, no spring
+      const split = new SplitText(h1Ref.current, { type: 'words' });
+
+      const tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
+
+      // 1. H1: word-by-word horizontal wipe (left → right)
+      tl.from(split.words, {
+        clipPath: 'inset(0 100% 0 0)',
+        duration: 0.55,
+        stagger: 0.06,
       });
+
+      // 2. Subtitle: horizontal wipe
+      tl.from(subtitleRef.current, {
+        clipPath: 'inset(0 100% 0 0)',
+        duration: 0.6,
+      }, '-=0.25');
+
+      // 3. Description + buttons: fade up
+      tl.from([descRef.current, buttonsRef.current], {
+        y: 20,
+        opacity: 0,
+        stagger: 0.1,
+        duration: 0.5,
+        ease: 'power3.out',
+      }, '-=0.35');
+
+      // Parallax on h1
+      gsap.to(h1Ref.current, {
+        y: -80,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top top',
+          end: 'bottom top',
+          scrub: true,
+        },
+      });
+
+      // Parallax on subtitle
+      gsap.to(subtitleRef.current, {
+        y: -40,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top top',
+          end: 'bottom top',
+          scrub: true,
+        },
+      });
+
+      return () => split.revert();
     },
-    { scope: containerRef }
+    { scope: sectionRef }
   );
 
   return (
     <section
       id="hero"
+      ref={sectionRef}
       className="min-h-screen flex items-center px-6 pt-24"
     >
-      <div ref={containerRef} className="max-w-6xl mx-auto w-full">
-        <h1 className="hero-animate text-5xl md:text-7xl lg:text-9xl font-bold leading-none tracking-tight mb-4">
+      <div className="max-w-6xl mx-auto w-full">
+        <h1 ref={h1Ref} className="h1-display mb-6">
           Simone Traversi
         </h1>
 
-        <p className="hero-animate text-xl md:text-2xl text-[#757575] mb-6">
+        <p ref={subtitleRef} className="text-xl md:text-2xl text-[#757575] mb-6">
           Full-Stack Developer &amp; Creative Engineer
         </p>
 
-        <p className="hero-animate text-base md:text-lg text-[#D1E0E8] max-w-2xl mb-10">
+        <p ref={descRef} className="text-base md:text-lg text-[#D1E0E8] max-w-2xl mb-10">
           I build fast, accessible, and beautifully crafted digital experiences.
           <br />
           From concept to deployment — always with intention.
         </p>
 
-        <div className="hero-animate flex flex-col md:flex-row gap-4">
+        <div ref={buttonsRef} className="flex flex-col md:flex-row gap-4">
           <a
             href="#projects"
             className="inline-block bg-[#FF4400] text-[#F4F4F4] px-8 py-4 font-semibold text-center"

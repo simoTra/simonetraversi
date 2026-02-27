@@ -1,10 +1,17 @@
 import type { Metadata } from "next";
-import { DM_Sans } from "next/font/google";
+import { Barlow, Inter } from "next/font/google";
 import "./globals.css";
 
-const dmSans = DM_Sans({
+const barlow = Barlow({
+  weight: ["800"],
   subsets: ["latin"],
-  variable: "--font-dm-sans",
+  variable: "--font-barlow",
+});
+
+const inter = Inter({
+  weight: ["400", "500", "700"],
+  subsets: ["latin"],
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
@@ -20,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${dmSans.variable} font-sans bg-[#1A1A1A] text-[#F4F4F4] antialiased`}
+        className={`${barlow.variable} ${inter.variable} font-sans bg-[#1A1A1A] text-[#F4F4F4] antialiased`}
       >
         {children}
       </body>
