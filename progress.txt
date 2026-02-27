@@ -118,3 +118,23 @@
 - Typecheck passes
 
 **Next up:** US-008 (Contact section) — create components/Contact.tsx with controlled form, social links, and GSAP ScrollTrigger heading animation.
+
+## 2026-02-27 — US-008: Contact section
+
+**Status:** COMPLETE
+
+**What was done:**
+- Created `components/Contact.tsx` as a `'use client'` component
+- Section with `id='contact'` and `py-24 md:py-32 px-6` padding
+- Heading "Let's work together." at `text-4xl md:text-6xl font-bold`
+- Controlled form with Name (text), Email (email), Message (textarea rows=4); all inputs styled `bg-transparent border-b border-[#757575] text-[#F4F4F4] focus:border-[#FF4400] outline-none w-full py-3`
+- Submit button `bg-[#FF4400] text-[#F4F4F4] px-8 py-4 font-semibold`
+- On submit (preventDefault): button text changes to 'Message sent!' and form inputs cleared; no real API call
+- Social links row (GitHub, LinkedIn, X/Twitter) with `href='#'` styled `text-[#757575] hover:text-[#FF4400]`
+- Form is `max-w-xl mx-0` on desktop, full-width on mobile
+- GSAP ScrollTrigger: heading animates from `y:40 opacity:0` on scroll
+- `gsap.registerPlugin(ScrollTrigger)` called at module level
+- Updated `app/page.tsx` to import and render `<Contact />` below `<Resume />`
+- Typecheck passes
+
+**Next up:** US-009 (Footer) — create components/Footer.tsx with copyright text and back-to-top link.
