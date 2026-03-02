@@ -113,13 +113,15 @@ export default function Cursor() {
         }}
       />
       {/* Orange spinner — hover state, static */}
-      <img
+      <div
         ref={spinnerRef}
-        src="/cursor.svg"
-        width={SIZE}
-        height={SIZE}
-        alt=""
-        style={{ position: 'absolute', opacity: 0 }}
+        style={{
+          position: 'absolute',
+          width: 12,
+          height: 12,
+          borderRadius: '50%',
+          backgroundColor: '#FF4400',
+        }}
       />
     </div>
   )
