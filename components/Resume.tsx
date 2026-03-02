@@ -84,7 +84,7 @@ export default function Resume() {
           <a
             href="/resume.pdf"
             download
-            className="inline-block bg-[#FF4400] text-[#F4F4F4] px-8 py-4 font-semibold"
+            className="inline-block bg-[#FF4400] text-[#F4F4F4] px-8 py-4 font-semibold transition-colors duration-200 hover:bg-[#D93B00]"
           >
             Download PDF
           </a>

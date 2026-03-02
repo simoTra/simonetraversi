@@ -82,8 +82,11 @@ export default function Hero() {
       className="min-h-screen flex items-center px-6 pt-24"
     >
       <div className="max-w-6xl mx-auto w-full">
-        <h1 ref={h1Ref} className="h1-display mb-6">
-          Simone Traversi
+        <h1 ref={h1Ref} className="h1-display">
+          Simone
+        </h1>
+        <h1 ref={h1Ref} className="h1-display mb-6 ml-32 sm:ml-18">
+          Traversi
         </h1>
 
         <p ref={subtitleRef} className="text-xl md:text-2xl text-[#757575] mb-6">
@@ -99,13 +102,13 @@ export default function Hero() {
         <div ref={buttonsRef} className="flex flex-col md:flex-row gap-4">
           <a
             href="#projects"
-            className="inline-block bg-[#FF4400] text-[#F4F4F4] px-8 py-4 font-semibold text-center"
+            className="inline-block bg-[#FF4400] text-[#F4F4F4] px-8 py-4 font-semibold text-center transition-colors duration-200 hover:bg-[#D93B00]"
           >
             View Work
           </a>
           <a
             href="#contact"
-            className="inline-block border border-[#F4F4F4] text-[#F4F4F4] px-8 py-4 font-semibold text-center"
+            className="inline-block border border-[#F4F4F4] text-[#F4F4F4] px-8 py-4 font-semibold text-center transition-all duration-200 hover:bg-[#F4F4F4] hover:text-[#1A1A1A]"
           >
             Get in Touch
           </a>

@@ -131,14 +131,13 @@ export default function Contact() {
             <div ref={submitRef}>
               <button
                 type="submit"
-                className="bg-[#FF4400] text-[#F4F4F4] px-8 py-4 font-semibold"
+                className="bg-[#FF4400] text-[#F4F4F4] px-8 py-4 font-semibold transition-colors duration-200 hover:bg-[#D93B00]"
               >
                 {submitted ? 'Message sent!' : 'Send Message'}
               </button>
             </div>
           </form>
 
-          {/* Social links */}
           <div className="flex gap-6 mt-12">
             <a
               href="#"

@@ -18,7 +18,7 @@
 }
 
 @utility h1-display {
-  font-size: clamp(4.5rem, 12vw, 11.25rem);
+  font-size: clamp(3.5rem, 10vw, 9.25rem);
   line-height: 1;
   font-weight: 800;
   letter-spacing: -0.02em;
@@ -39,6 +39,10 @@
   font-weight: 800;
   letter-spacing: -0.02em;
   font-family: var(--font-barlow);
+}
+
+*, *::before, *::after {
+  cursor: none !important;
 }
 
 html {
