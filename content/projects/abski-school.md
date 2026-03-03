@@ -3,8 +3,6 @@ title: "AB Ski School"
 description: "Lorem ipsum dolor sit amet"
 tags: ["React", "Tailwind", "Database", "Payment System"]
 year: 2026
-link: "https://simonetraversi.it"
-github: "https://github.com/simonetraversi/"
 ---
 
 ## Overview

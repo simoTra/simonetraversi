@@ -35,7 +35,7 @@ export default function Contact() {
     });
 
   return (
-    <section id="contact" ref={sectionRef} className="py-24 md:py-32 px-6">
+    <section id="contact" ref={sectionRef} className="py-16 md:py-24 px-6">
       <div className="max-w-6xl mx-auto">
         <h2 ref={headingRef} className="h2-display mb-16">
           Let&apos;s work together.

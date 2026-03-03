@@ -9,30 +9,44 @@ gsap.registerPlugin(ScrollTrigger);
 
 const entries = [
   {
-    company: 'Acme Corp',
-    role: 'Senior Full-Stack Engineer',
-    dates: '2022 – Present',
+    company: 'Fanuc - Sanoma',
+    role: 'Robotic and Industrial Automation Trainer',
+    dates: '2023 - Present',
+    description: "I deliver hands-on training in industrial robotics, helping students and professionals program and operate FANUC robots. Focus on motion simulation, process optimization, and preparing participants for FANUC Robotics Certification.",
     bullets: [
-      'Led architecture of a real-time data platform serving 500k+ users, reducing latency by 40%.',
-      'Mentored a team of 4 engineers and drove adoption of TypeScript across the monorepo.',
+      'Precision handling of industrial robots',
+      'Robot programming and configuration',
+      'Motion simulation and validation (RoboGuide)',
+      'Cycle-time analysis and optimization',
+      'Teaching and certification support',
     ],
   },
   {
-    company: 'Bright Digital',
-    role: 'Full-Stack Developer',
-    dates: '2019 – 2022',
+    company: 'Makrshakr SRL',
+    role: 'Software Engineer',
+    dates: '2022 - Present',
+    description: "I design, develop, and own the mobile experience for robotic bar systems, alongside web, backend, and embedded software. I integrate industrial robots on client sites and support rapid prototyping with 3D printing.",
     bullets: [
-      'Built and shipped 12 client web applications using React, Next.js, and Node.js.',
-      'Designed a reusable component library that cut development time by 30% across projects.',
+      'End-to-end ownership of mobile applications (Flutter)',
+      'Web dashboards & NestJS backend integration',
+      'Custom API development & IoT communication (MQTT)',
+      'Industrial robot commissioning and programming (KUKA, ABB)',
+      'Rapid prototyping and 3D fabrication',
+      'Containerized deployments (Docker)',
+      'AI and MCP servers'
     ],
   },
   {
-    company: 'StartupXYZ',
-    role: 'Frontend Engineer',
-    dates: '2017 – 2019',
+    company: 'Comau - Pearson',
+    role: 'Robotic and Industrial Automation Trainer',
+    dates: '2018 - 2023',
+    description: "Trained over 500 students in industrial robotics using e.DO robots, fieldbus communication, and programming. Led interactive sessions and teacher training to bridge education with industry-ready skills.",
     bullets: [
-      'Developed the consumer-facing dashboard from scratch, improving engagement by 25%.',
-      'Integrated third-party APIs for payments, analytics, and authentication.',
+      'Fieldbus and I/O communication protocols',
+      'Robot operation, configuration, and programming',
+      'e.DO Learning Lab sessions for hands-on learning',
+      'Teacher training & assessment programs',
+      'Empowering students with practical automation competencies',
     ],
   },
 ];
@@ -43,7 +57,6 @@ export default function Experience() {
 
   useGSAP(
     () => {
-      // Timeline line draw
       if (timelineLineRef.current) {
         gsap.from(timelineLineRef.current, {
           scaleY: 0,
@@ -58,7 +71,6 @@ export default function Experience() {
         });
       }
 
-      // Dot nodes — individual ScrollTrigger per dot
       const dots = sectionRef.current?.querySelectorAll('.timeline-dot');
       dots?.forEach((dot) => {
         gsap.from(dot, {
@@ -73,7 +85,6 @@ export default function Experience() {
         });
       });
 
-      // Entry cards
       gsap.from('.timeline-entry', {
         x: -40,
         y: 60,
@@ -93,7 +104,7 @@ export default function Experience() {
   );
 
   return (
-    <section id="experience" ref={sectionRef} className="py-24 md:py-32 px-6">
+    <section id="experience" ref={sectionRef} className="py-16 md:py-24 px-6">
       <div className="max-w-6xl mx-auto">
         <h2 className="h2-display mb-16">Experience</h2>
 
@@ -115,9 +126,10 @@ export default function Experience() {
                   <p className="text-[#757575] text-sm mb-1">{entry.dates}</p>
                   <p className="text-[#F4F4F4] font-semibold text-lg">{entry.company}</p>
                   <p className="text-[#D1E0E8] mb-3">{entry.role}</p>
+                  <p className="text-[#D1E0E8] mb-3">{entry.description}</p>
                   <ul className="space-y-1">
                     {entry.bullets.map((bullet, i) => (
-                      <li key={i} className="text-[#D1E0E8] text-sm">
+                      <li key={i} className="text-[#D1E0E8] text-sm list-disc">
                         {bullet}
                       </li>
                     ))}

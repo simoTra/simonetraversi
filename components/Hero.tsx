@@ -73,7 +73,7 @@ export default function Hero() {
     <section
       id="hero"
       ref={sectionRef}
-      className="min-h-screen flex items-center px-6 pt-24"
+      className="min-h-screen flex items-center px-6"
     >
       <div className="max-w-6xl mx-auto w-full">
         <h1 ref={h1Ref} className="h1-display">
@@ -84,11 +84,13 @@ export default function Hero() {
         </h1>
 
         <p ref={subtitleRef} className="text-xl md:text-2xl text-[#757575] mb-6">
-          Full-Stack Developer &amp; Creative Engineer
+          Robotics, Software &amp; Creative 3D Experiments
         </p>
 
         <p ref={descRef} className="text-base md:text-lg text-[#D1E0E8] max-w-2xl mb-10">
-          I build fast, accessible, and beautifully crafted digital experiences.
+          I program industrial robots, develop software, and explore 3D prototyping.
+          <br />
+          Hands-on with code, simulations, and real-world automation systems.
           <br />
           From concept to deployment — always with intention.
         </p>

@@ -3,8 +3,6 @@ title: "Warpato"
 description: "Lorem ipsum dolor sit amet"
 tags: ["Design", "Branding", "UI"]
 year: 2026
-link: "https://simonetraversi.it"
-github: "https://github.com/simonetraversi/"
 ---
 
 ## Overview

@@ -92,7 +92,7 @@ export default function Projects({ projects }: Props) {
   );
 
   return (
-    <section id="projects" ref={sectionRef} className="py-24 md:py-32 px-6">
+    <section id="projects" ref={sectionRef} className="py-16 md:py-24 px-6">
       <div className="max-w-6xl mx-auto mb-16">
         <h2 className="h2-display">Projects</h2>
       </div>

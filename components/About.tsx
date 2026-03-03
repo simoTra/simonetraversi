@@ -93,7 +93,7 @@ export default function About() {
   );
 
   return (
-    <section id="about" ref={sectionRef} className="py-24 md:py-32 px-6">
+    <section id="about" ref={sectionRef} className="py-16 md:py-24 px-6">
       <div className="max-w-6xl mx-auto">
         <h2 ref={h2Ref} className="h2-display mb-16">
           <span className="border-b-2 border-[#FF4400] inline-block pb-1">About</span>
@@ -104,24 +104,21 @@ export default function About() {
 
           <div>
             <p ref={bodyTextRef} className="text-[#D1E0E8] text-base md:text-lg mb-8 leading-relaxed">
-              I&apos;m a full-stack developer with a passion for building elegant, high-performance
-              web experiences. With years of experience across the stack, I thrive at the
-              intersection of design and engineering. I care deeply about the details that make
-              software feel alive.
+              I&apos;m a robotics software engineer and full-stack developer, passionate about building intuitive interfaces that make complex machines easy to control. I thrive at the intersection of code, automation, and hands-on experimentation, turning ideas into interactive systems.
             </p>
 
             <ul ref={listRef} className="space-y-3">
               <li className="text-[#D1E0E8]">
-                <span className="text-[#FF4400]">→</span> Problem solver
+                <span className="text-[#FF4400]">→</span> Robotics programming & industrial automation
               </li>
               <li className="text-[#D1E0E8]">
-                <span className="text-[#FF4400]">→</span> Clean code advocate
+                <span className="text-[#FF4400]">→</span> Full-stack & embedded software development
               </li>
               <li className="text-[#D1E0E8]">
-                <span className="text-[#FF4400]">→</span> Performance obsessed
+                <span className="text-[#FF4400]">→</span> 3D prototyping & experimental tinkering
               </li>
               <li className="text-[#D1E0E8]">
-                <span className="text-[#FF4400]">→</span> Lifelong learner
+                <span className="text-[#FF4400]">→</span> UX-driven interfaces for complex systems
               </li>
             </ul>
           </div>

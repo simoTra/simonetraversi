@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
+import LogoSVG from './LogoSVG';
 
 const NAV_LINKS = [
   { label: 'About', href: '/#about' },
@@ -56,12 +57,10 @@ export default function Nav() {
       }`}
     >
       <div className="max-w-6xl mx-auto flex items-center justify-between">
-        {/* Site name / initials */}
-        <Link href="/" className="text-[#F4F4F4] font-bold text-lg tracking-tight">
-          ST
+        <Link href="/" aria-label="Home">
+          <LogoSVG className="h-24 w-auto" />
         </Link>
 
-        {/* Desktop links */}
         <ul className="hidden md:flex items-center gap-8">
           {NAV_LINKS.map(({ label, href }) => (
             <li key={href}>
@@ -79,7 +78,6 @@ export default function Nav() {
           ))}
         </ul>
 
-        {/* Mobile hamburger */}
         <button
           className="md:hidden flex flex-col justify-center items-center gap-1.5 p-2"
           aria-label="Toggle menu"
@@ -91,7 +89,6 @@ export default function Nav() {
         </button>
       </div>
 
-      {/* Mobile dropdown */}
       {menuOpen && (
         <div className="md:hidden w-full bg-[#1A1A1A] border-t border-[#757575] mt-2">
           <ul className="flex flex-col">

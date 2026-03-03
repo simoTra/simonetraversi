@@ -31,8 +31,15 @@ const markdownComponents: Components = {
   img({ src, alt }) {
     if (!src || typeof src !== 'string') return null;
     return (
-      <span className="block relative aspect-video my-8 rounded-lg overflow-hidden">
-        <Image src={src} alt={alt ?? 'project image'} fill className="object-cover" />
+      <span className="block my-8">
+        <Image
+          src={src}
+          alt={alt ?? 'project image'}
+          width={1200}
+          height={900}
+          className="max-w-xs w-full h-auto rounded-lg"
+          style={{ objectFit: 'contain' }}
+        />
       </span>
     );
   },
