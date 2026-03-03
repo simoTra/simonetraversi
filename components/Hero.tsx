@@ -19,25 +19,21 @@ export default function Hero() {
     () => {
       if (!h1Ref.current || !subtitleRef.current || !descRef.current || !buttonsRef.current) return;
 
-      // Split h1 by words — clip-path wipe per word, no spring
       const split = new SplitText(h1Ref.current, { type: 'words' });
 
       const tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
 
-      // 1. H1: word-by-word horizontal wipe (left → right)
       tl.from(split.words, {
         clipPath: 'inset(0 100% 0 0)',
         duration: 0.55,
         stagger: 0.06,
       });
 
-      // 2. Subtitle: horizontal wipe
       tl.from(subtitleRef.current, {
         clipPath: 'inset(0 100% 0 0)',
         duration: 0.6,
       }, '-=0.25');
 
-      // 3. Description + buttons: fade up
       tl.from([descRef.current, buttonsRef.current], {
         y: 20,
         opacity: 0,
@@ -46,7 +42,6 @@ export default function Hero() {
         ease: 'power3.out',
       }, '-=0.35');
 
-      // Parallax on h1
       gsap.to(h1Ref.current, {
         y: -80,
         ease: 'none',
@@ -58,7 +53,6 @@ export default function Hero() {
         },
       });
 
-      // Parallax on subtitle
       gsap.to(subtitleRef.current, {
         y: -40,
         ease: 'none',
@@ -104,7 +98,7 @@ export default function Hero() {
             href="#projects"
             className="inline-block bg-[#FF4400] text-[#F4F4F4] px-8 py-4 font-semibold text-center transition-colors duration-200 hover:bg-[#D93B00]"
           >
-            View Work
+            View Projects
           </a>
           <a
             href="#contact"

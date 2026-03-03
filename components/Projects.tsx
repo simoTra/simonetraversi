@@ -4,39 +4,40 @@ import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Image from 'next/image';
+import { useTransition } from '@/context/TransitionContext';
+
+import type { Project } from '@/lib/projects';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const projects = [
-  {
-    title: 'DataStream Platform',
-    description:
-      'Real-time analytics dashboard for monitoring distributed systems at scale.',
-    tags: ['Next.js', 'TypeScript', 'WebSockets', 'PostgreSQL'],
-    href: '#',
-  },
-  {
-    title: 'DesignKit UI',
-    description:
-      'Open-source component library with 50+ accessible, composable React components.',
-    tags: ['React', 'Tailwind', 'Storybook', 'Vitest'],
-    href: '#',
-  },
-  {
-    title: 'ShipFast CLI',
-    description:
-      'Developer CLI tool that scaffolds production-ready Next.js apps in under 60 seconds.',
-    tags: ['Node.js', 'TypeScript', 'Commander', 'Handlebars'],
-    href: '#',
-  },
-];
+interface Props {
+  projects: Pick<Project, 'title' | 'description' | 'tags' | 'slug' | 'coverImage'>[];
+}
 
-export default function Projects() {
+export default function Projects({ projects }: Props) {
   const sectionRef = useRef<HTMLElement>(null);
+  const { startTransition } = useTransition();
+  const isTransitioning = useRef(false);
+
+  function handleCardClick(e: React.MouseEvent, slug: string) {
+    if (isTransitioning.current) return;
+    isTransitioning.current = true;
+    startTransition(`/projects/${slug}`, e.clientX, e.clientY);
+    setTimeout(() => { isTransitioning.current = false; }, 1000);
+  }
+
+  function handleCardKeyDown(e: React.KeyboardEvent, slug: string) {
+    if (e.key === 'Enter') {
+      if (isTransitioning.current) return;
+      isTransitioning.current = true;
+      startTransition(`/projects/${slug}`, 0, 0);
+      setTimeout(() => { isTransitioning.current = false; }, 1000);
+    }
+  }
 
   useGSAP(
     () => {
-      // Card entrance
       gsap.from('.project-card', {
         y: 80,
         scale: 0.9,
@@ -52,7 +53,6 @@ export default function Projects() {
         },
       });
 
-      // 3D tilt on mousemove
       const cards = sectionRef.current?.querySelectorAll<HTMLElement>('.project-card');
       const cleanupFns: (() => void)[] = [];
 
@@ -93,17 +93,31 @@ export default function Projects() {
 
   return (
     <section id="projects" ref={sectionRef} className="py-24 md:py-32 px-6">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="h2-display mb-16">Projects</h2>
+      <div className="max-w-6xl mx-auto mb-16">
+        <h2 className="h2-display">Projects</h2>
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="overflow-x-auto pb-6 [scroll-snap-type:x_mandatory] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        <div className="flex">
           {projects.map((project) => (
             <div
               key={project.title}
-              className="project-card border border-[#757575] rounded-lg transition-colors duration-300 hover:border-[#FF4400]"
+              role="link"
+              tabIndex={0}
+              onClick={(e) => handleCardClick(e, project.slug)}
+              onKeyDown={(e) => handleCardKeyDown(e, project.slug)}
+              className="project-card flex-none mr-6 w-[clamp(300px,70vw,480px)] snap-start border border-[#757575] rounded-lg transition-colors duration-300 hover:border-[#FF4400] cursor-none"
             >
-              {/* 16:9 image placeholder */}
-              <div className="aspect-video bg-[#D1E0E8]/20 rounded-t-lg" />
+              <div className="relative aspect-video bg-[#D1E0E8]/10 rounded-t-lg overflow-hidden">
+                {project.coverImage && (
+                  <Image
+                    src={project.coverImage}
+                    alt={project.title}
+                    fill
+                    className="object-cover"
+                  />
+                )}
+              </div>
 
               <div className="p-6 flex flex-col gap-3">
                 <h3 className="text-[#F4F4F4] font-semibold text-xl">
@@ -113,7 +127,6 @@ export default function Projects() {
                   {project.description}
                 </p>
 
-                {/* Tech tag pills */}
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
                     <span
@@ -125,12 +138,9 @@ export default function Projects() {
                   ))}
                 </div>
 
-                <a
-                  href={project.href}
-                  className="text-[#FF4400] text-sm font-medium mt-1 self-start"
-                >
+                <span className="text-[#FF4400] text-sm font-medium mt-1 self-start">
                   View →
-                </a>
+                </span>
               </div>
             </div>
           ))}

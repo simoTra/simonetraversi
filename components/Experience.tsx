@@ -97,9 +97,7 @@ export default function Experience() {
       <div className="max-w-6xl mx-auto">
         <h2 className="h2-display mb-16">Experience</h2>
 
-        {/* Timeline */}
         <div className="relative">
-          {/* Continuous left line */}
           <div
             ref={timelineLineRef}
             className="absolute top-0 left-1.5 w-px h-full bg-[#757575] origin-top"
@@ -111,7 +109,6 @@ export default function Experience() {
                 key={entry.company}
                 className="timeline-entry relative pl-10 md:pl-16"
               >
-                {/* Dot node */}
                 <div className="timeline-dot absolute left-0 top-1.5 w-3 h-3 rounded-full bg-[#FF4400]" />
 
                 <div>

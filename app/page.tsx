@@ -1,4 +1,3 @@
-import Nav from '@/components/Nav';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Experience from '@/components/Experience';
@@ -6,20 +5,23 @@ import Projects from '@/components/Projects';
 import Resume from '@/components/Resume';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
-import Cursor from '@/components/Cursor';
+import { getAllProjectSlugs, getProjectBySlug } from '@/lib/projects';
 
 export default function Home() {
+  const projects = getAllProjectSlugs().map((slug) => {
+    const { title, description, tags, coverImage } = getProjectBySlug(slug);
+    return { slug, title, description, tags, coverImage };
+  });
+
   return (
     <div>
-      <Nav />
       <Hero />
       <About />
       <Experience />
-      <Projects />
+      <Projects projects={projects} />
       <Resume />
       <Contact />
       <Footer />
-      <Cursor />
     </div>
   );
 }

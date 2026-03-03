@@ -1,13 +1,14 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Link from 'next/link';
 
 const NAV_LINKS = [
-  { label: 'About', href: '#about' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Resume', href: '#resume' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'About', href: '/#about' },
+  { label: 'Experience', href: '/#experience' },
+  { label: 'Projects', href: '/#projects' },
+  { label: 'Resume', href: '/#resume' },
+  { label: 'Contact', href: '/#contact' },
 ];
 
 const SECTION_IDS = ['about', 'experience', 'projects', 'resume', 'contact'];
@@ -56,9 +57,9 @@ export default function Nav() {
     >
       <div className="max-w-6xl mx-auto flex items-center justify-between">
         {/* Site name / initials */}
-        <a href="#hero" className="text-[#F4F4F4] font-bold text-lg tracking-tight">
+        <Link href="/" className="text-[#F4F4F4] font-bold text-lg tracking-tight">
           ST
-        </a>
+        </Link>
 
         {/* Desktop links */}
         <ul className="hidden md:flex items-center gap-8">
@@ -67,7 +68,7 @@ export default function Nav() {
               <a
                 href={href}
                 className={`text-sm font-medium transition-colors duration-200 ${
-                  activeSection === href.slice(1)
+                  activeSection === href.slice(2)
                     ? 'text-[#FF4400]'
                     : 'text-[#F4F4F4] hover:text-[#FF4400]'
                 }`}
@@ -100,7 +101,7 @@ export default function Nav() {
                   href={href}
                   onClick={handleLinkClick}
                   className={`block px-6 py-4 text-sm font-medium transition-colors duration-200 ${
-                    activeSection === href.slice(1)
+                    activeSection === href.slice(2)
                       ? 'text-[#FF4400]'
                       : 'text-[#F4F4F4] hover:text-[#FF4400]'
                   }`}
