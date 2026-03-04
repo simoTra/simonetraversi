@@ -114,7 +114,7 @@ export default function Projects({ projects }: Props) {
                     src={project.coverImage}
                     alt={project.title}
                     fill
-                    className="object-cover"
+                    className="object-fit"
                   />
                 )}
               </div>
