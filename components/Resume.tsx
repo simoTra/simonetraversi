@@ -10,18 +10,18 @@ gsap.registerPlugin(ScrollTrigger);
 const skillGroups = [
   {
     label: 'Languages',
-    skills: ['TypeScript', 'Dart', 'JavaScript', 'Python', 'Java', 'C/C++', 'SQL'],
+    skills: ['TypeScript', 'Dart', 'JavaScript', 'Python', 'Java', 'C/C++', 'SQL', '...'],
   },
   {
     label: 'Frameworks & Libraries',
-    skills: ['Flutter', 'React', 'NestJS', 'Next.js', 'Tailwind CSS'],
+    skills: ['Flutter', 'React', 'NestJS', 'Next.js', 'Tailwind CSS', 'Platformio', 'Arduino IDE', '...'],
   },
   {
     label: 'Tools & Technologies',
-    skills: ['Git', 'Docker', 'PostgreSQL', 'Redis', 'MongoDB', 'MQTT', 'Embedded Systems', '3D Printing'],
+    skills: ['Git', 'Docker', 'PostgreSQL', 'Redis', 'MongoDB', 'MQTT', 'Embedded Systems', '3D Printing', 'Fusion 360', '...'],
   },
   {
-    label: 'Robotics & Industrial Automation',
+    label: 'Robotics, Industrial Automation & Communication',
     skills: [
       'KUKA Robots',
       'ABB Robots',
@@ -30,8 +30,18 @@ const skillGroups = [
       'RoboGuide',
       'Robot Programming',
       'Motion Simulation',
-      'Industrial Automation'
+      'Industrial Automation',
+      'I2C, UART',
+      '...'
     ],
+  },
+  {
+    label: 'Management & Tracking',
+    skills: ['Jira', 'Trello', 'Notion', 'Slack', '...'],
+  },
+  {
+    label: 'AI & Automation',
+    skills: ['Claude API', 'OpenAI API', 'MCP Servers', 'AI Agents', 'Prompt Engineering', 'LangChain', 'RAG', '...'],
   },
 ];
 
@@ -101,8 +111,11 @@ export default function Resume() {
 
         <div className="mb-16 skill-tags-container">
           <h3 className="h3-display mb-8">Skills</h3>
+          <p className="text-[#D1E0E8] text-base md:text-lg mb-8 leading-relaxed pt-4">
+            A (non-exhaustive) list of my core technical skills.
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {skillGroups.map((group, i) => (
+            {skillGroups.map((group) => (
               <div key={group.label}>
                 <p className="text-[#757575] text-sm uppercase tracking-widest mb-4">
                   {group.label}

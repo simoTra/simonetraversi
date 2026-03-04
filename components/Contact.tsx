@@ -40,31 +40,6 @@ export default function Contact() {
         <h2 ref={headingRef} className="h2-display mb-16">
           Let&apos;s work together.
         </h2>
-
-        <div className="max-w-xl mx-auto md:mx-0">
-          <div className='flex flex-col gap-8' data-tf-live="01KJSHK5CT35RB8A5FEQWQG246" suppressHydrationWarning><script src="//embed.typeform.com/next/embed.js"></script></div>
-
-          <div className="flex gap-6 mt-12">
-            <a
-              href="#"
-              className="text-[#757575] hover:text-[#FF4400] transition-colors duration-200 text-sm"
-            >
-              GitHub
-            </a>
-            <a
-              href="#"
-              className="text-[#757575] hover:text-[#FF4400] transition-colors duration-200 text-sm"
-            >
-              LinkedIn
-            </a>
-            <a
-              href="#"
-              className="text-[#757575] hover:text-[#FF4400] transition-colors duration-200 text-sm"
-            >
-              X / Twitter
-            </a>
-          </div>
-        </div>
       </div>
     </section>
   );

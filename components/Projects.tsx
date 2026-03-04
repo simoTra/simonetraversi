@@ -95,6 +95,9 @@ export default function Projects({ projects }: Props) {
     <section id="projects" ref={sectionRef} className="py-16 md:py-24 px-6">
       <div className="max-w-6xl mx-auto mb-16">
         <h2 className="h2-display">Projects</h2>
+      <p className="text-[#D1E0E8] text-base md:text-lg mb-8 leading-relaxed pt-4">
+        Here are some of my latest projects that are already at an advanced stage. I've also got other things in the works, like a full homelab setup and a few smart home IoT projects.
+      </p>
       </div>
 
       <div className="overflow-x-auto pb-6 [scroll-snap-type:x_mandatory] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
