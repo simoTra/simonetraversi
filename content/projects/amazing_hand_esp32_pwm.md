@@ -24,7 +24,7 @@ This project replaces the servo driver stack entirely: an ESP32 talks I2C to an 
 - **ESP32** development board
 - **Adafruit PCA9685** 16-channel I2C PWM driver
 - **8× PDI-1109MG** PWM servos
-- **5V / 3–5A** external power supply
+- **5V / 3-5A** external power supply
 - Amazing Hand 3D-printed parts (original Pollen Robotics design)
 
 > **Important:** The PCA9685 board must be powered separately from the ESP32. Driving 8 servos from the ESP32's onboard regulator will cause brownouts and unpredictable behavior.
@@ -103,7 +103,7 @@ Each servo's min/max pulse width can be tuned individually and saved to persiste
 | ESP32 development board | 1 |
 | Adafruit PCA9685 PWM driver | 1 |
 | PDI-1109MG servo | 8 |
-| 5V / 3–5A power supply | 1 |
+| 5V / 3-5A power supply | 1 |
 | Amazing Hand 3D-printed parts | 1 set |
 
 ## Getting Started

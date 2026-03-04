@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef } from 'react';
+import Image from 'next/image';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -14,6 +15,7 @@ export default function Hero() {
   const subtitleRef = useRef<HTMLParagraphElement>(null);
   const descRef = useRef<HTMLParagraphElement>(null);
   const buttonsRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
 
   useGSAP(
     () => {
@@ -41,6 +43,14 @@ export default function Hero() {
         duration: 0.5,
         ease: 'power3.out',
       }, '-=0.35');
+
+      if (imageRef.current) {
+        tl.from(imageRef.current, {
+          clipPath: 'inset(0 0 100% 0)',
+          duration: 0.8,
+          ease: 'power4.out',
+        }, '-=0.6');
+      }
 
       gsap.to(h1Ref.current, {
         y: -80,
@@ -75,39 +85,52 @@ export default function Hero() {
       ref={sectionRef}
       className="min-h-screen flex items-center px-6"
     >
-      <div className="max-w-6xl mx-auto w-full">
-        <h1 ref={h1Ref} className="h1-display">
-          Simone
-        </h1>
-        <h1 ref={h1Ref} className="h1-display mb-6 ml-32 sm:ml-18">
-          Traversi
-        </h1>
+      <div className="max-w-6xl mx-auto w-full flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+        <div className="flex-1">
+          <h1 ref={h1Ref} className="h1-display">
+            Simone
+          </h1>
+          <h1 className="h1-display mb-6 ml-32 sm:ml-18">
+            Traversi
+          </h1>
 
-        <p ref={subtitleRef} className="text-xl md:text-2xl text-[#757575] mb-6">
-          Robotics, Software &amp; Creative 3D Experiments
-        </p>
+          <p ref={subtitleRef} className="text-xl md:text-2xl text-[#757575] mb-6">
+            Robotics, Software &amp; Creative 3D Experiments
+          </p>
 
-        <p ref={descRef} className="text-base md:text-lg text-[#D1E0E8] max-w-2xl mb-10">
-          I program industrial robots, develop software, and explore 3D prototyping.
-          <br />
-          Hands-on with code, simulations, and real-world automation systems.
-          <br />
-          From concept to deployment — always with intention.
-        </p>
+          <p ref={descRef} className="text-base md:text-lg text-[#D1E0E8] max-w-2xl mb-10">
+            I program industrial robots, develop software, and explore 3D prototyping.
+            <br />
+            Hands-on with code, simulations, and real-world automation systems.
+            <br />
+            From concept to deployment — always with intention.
+          </p>
 
-        <div ref={buttonsRef} className="flex flex-col md:flex-row gap-4">
-          <a
-            href="#projects"
-            className="inline-block bg-[#FF4400] text-[#F4F4F4] px-8 py-4 font-semibold text-center transition-colors duration-200 hover:bg-[#D93B00]"
-          >
-            View Projects
-          </a>
-          <a
-            href="#contact"
-            className="inline-block border border-[#F4F4F4] text-[#F4F4F4] px-8 py-4 font-semibold text-center transition-all duration-200 hover:bg-[#F4F4F4] hover:text-[#1A1A1A]"
-          >
-            Get in Touch
-          </a>
+          <div ref={buttonsRef} className="flex flex-col md:flex-row gap-4">
+            <a
+              href="#projects"
+              className="inline-block bg-[#FF4400] text-[#F4F4F4] px-8 py-4 font-semibold text-center transition-colors duration-200 hover:bg-[#D93B00]"
+            >
+              View Projects
+            </a>
+            <a
+              href="#contact"
+              className="inline-block border border-[#F4F4F4] text-[#F4F4F4] px-8 py-4 font-semibold text-center transition-all duration-200 hover:bg-[#F4F4F4] hover:text-[#1A1A1A]"
+            >
+              Get in Touch
+            </a>
+          </div>
+        </div>
+
+        <div ref={imageRef} className="w-72 h-96 lg:w-96 lg:h-130 shrink-0 rounded-sm overflow-hidden">
+          <Image
+            src="/images/simoneHome.jpeg"
+            alt="Simone Traversi"
+            width={400}
+            height={600}
+            className="w-full h-full object-cover scale-x-[-1]"
+            priority
+          />
         </div>
       </div>
     </section>

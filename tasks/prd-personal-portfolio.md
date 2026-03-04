@@ -60,7 +60,7 @@ A single-page personal portfolio website for Simone Traversi — designed to lan
 
 - [ ] Section with id `about`, visible in nav
 - [ ] Two-column layout on desktop: left = large portrait/photo placeholder (`aspect-square`, gray bg), right = text block
-- [ ] Text block includes: short bio paragraph (placeholder), 3–5 bullet traits or values
+- [ ] Text block includes: short bio paragraph (placeholder), 3-5 bullet traits or values
 - [ ] GSAP ScrollTrigger animation: section fades/slides in as it enters the viewport
 - [ ] Layout collapses to single column on mobile
 - [ ] Typecheck passes
@@ -76,7 +76,7 @@ A single-page personal portfolio website for Simone Traversi — designed to lan
 
 - [ ] Section with id `experience`
 - [ ] Vertical timeline component with at least 3 placeholder entries
-- [ ] Each entry shows: company name, role title, date range, and 1–2 bullet points of responsibilities
+- [ ] Each entry shows: company name, role title, date range, and 1-2 bullet points of responsibilities
 - [ ] Timeline has a vertical line connecting entries, with a dot/node per entry
 - [ ] GSAP ScrollTrigger: each entry animates in sequentially as user scrolls (stagger from left or fade-in)
 - [ ] Responsive: timeline readable on mobile (stacked, line on left edge)
@@ -92,7 +92,7 @@ A single-page personal portfolio website for Simone Traversi — designed to lan
 **Acceptance Criteria:**
 
 - [ ] Section with id `projects`
-- [ ] Grid of project cards (2–3 columns desktop, 1 column mobile)
+- [ ] Grid of project cards (2-3 columns desktop, 1 column mobile)
 - [ ] Each card contains: project image placeholder (16:9 aspect ratio, dark gray bg), title, short description (2 lines), tech tags, and a link icon/button ("View" or "GitHub")
 - [ ] At least 3 placeholder project cards
 - [ ] Cards have a subtle hover effect (border highlight or scale transform, no GSAP needed — CSS is fine)
@@ -212,9 +212,9 @@ The site must work correctly at all three breakpoints using Tailwind's standard 
 
 | Breakpoint | Width | Behaviour |
 |---|---|---|
-| Mobile | 375px – 767px | Single column, full-width sections, hamburger nav, reduced font sizes |
-| Tablet | 768px – 1023px | Hybrid layouts, 2-col project grid, nav links visible |
-| Desktop | 1024px – 1440px+ | Full layouts, max-width container centred, multi-col grids |
+| Mobile | 375px - 767px | Single column, full-width sections, hamburger nav, reduced font sizes |
+| Tablet | 768px - 1023px | Hybrid layouts, 2-col project grid, nav links visible |
+| Desktop | 1024px - 1440px+ | Full layouts, max-width container centred, multi-col grids |
 
 **Per-section rules:**
 
@@ -222,7 +222,7 @@ The site must work correctly at all three breakpoints using Tailwind's standard 
 - **About:** Single column on mobile (image on top, text below); two-column side-by-side on tablet+
 - **Experience:** Timeline line on left edge at all sizes; entry text full-width on mobile; indented on desktop
 - **Projects:** 1 column (mobile) → 2 columns (tablet) → 3 columns (desktop)
-- **Resume:** Skills groups stack vertically on mobile; 2–3 columns on desktop
+- **Resume:** Skills groups stack vertically on mobile; 2-3 columns on desktop
 - **Contact:** Form is full-width on mobile; max-width constrained on desktop
 - **Nav:** Links hidden on mobile behind hamburger menu; full nav visible on tablet+; drawer/overlay closes on link click
 - **Typography:** All headlines must remain large and impactful even at 375px — never shrink below `text-4xl` for section headings

@@ -127,8 +127,8 @@ export default function Resume() {
 
           <div className="mb-6">
             <p className="text-[#F4F4F4] font-semibold">Università degli Studi di Torino</p>
-            <p className="text-[#D1E0E8]">ICT</p>
-            <p className="text-[#757575] text-sm">2019 – 2022 | Grade: 104</p>
+            <p className="text-[#D1E0E8]">Innovation And Communication Technology</p>
+            <p className="text-[#757575] text-sm">2019 - 2022 | Grade: 104</p>
           </div>
 
           <div className="mb-6">
@@ -140,13 +140,13 @@ export default function Resume() {
           <div className="mb-6">
             <p className="text-[#F4F4F4] font-semibold">Università degli Studi di Torino</p>
             <p className="text-[#D1E0E8]">Computer Science</p>
-            <p className="text-[#757575] text-sm">2018 – 2019</p>
+            <p className="text-[#757575] text-sm">2018 - 2019</p>
           </div>
 
           <div className="mb-6">
             <p className="text-[#F4F4F4] font-semibold">IIS Galilei Ferrari</p>
             <p className="text-[#D1E0E8]">Perito Meccatronico ed Energetico, Robotico</p>
-            <p className="text-[#757575] text-sm">2013 – 2018 | Grade: 93</p>
+            <p className="text-[#757575] text-sm">2013 - 2018 | Grade: 93</p>
           </div>
         </div>
       </div>

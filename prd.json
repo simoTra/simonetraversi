@@ -73,7 +73,7 @@
         "Section heading 'About' at text-4xl md:text-6xl font-bold with a short orange underline accent (border-b-2 border-[#FF4400] inline-block)",
         "Two-column layout on md+: left = square image placeholder (aspect-square bg-[#D1E0E8]/20 w-full), right = text block",
         "Single column on mobile: image on top, text below",
-        "Text block: bio paragraph placeholder (2–3 sentences), followed by 4 trait/value bullet points (e.g. '→ Problem solver', '→ Clean code advocate')",
+        "Text block: bio paragraph placeholder (2-3 sentences), followed by 4 trait/value bullet points (e.g. '→ Problem solver', '→ Clean code advocate')",
         "Bullet points use text-[#FF4400] for the arrow/symbol",
         "GSAP ScrollTrigger: section container fades and slides up (y:40, opacity:0 → y:0, opacity:1) when it enters the viewport",
         "About is imported and rendered in app/page.tsx",
@@ -136,7 +136,7 @@
         "Section with id='resume', py-24 md:py-32 padding",
         "Section heading 'Resume' at text-4xl md:text-6xl font-bold",
         "Prominent 'Download PDF' button (bg-[#FF4400] text-[#F4F4F4] px-8 py-4) linking to /resume.pdf with download attribute",
-        "Skills block below button: 3 skill groups (e.g. 'Languages', 'Frameworks', 'Tools') each with 4–5 placeholder skill tags (same pill style as project tech tags)",
+        "Skills block below button: 3 skill groups (e.g. 'Languages', 'Frameworks', 'Tools') each with 4-5 placeholder skill tags (same pill style as project tech tags)",
         "Skill groups displayed in 1 column (mobile) → 3 columns (md+)",
         "Education block: one placeholder entry with institution, degree, and year in text-[#757575]",
         "Resume is imported and rendered in app/page.tsx",
@@ -145,7 +145,7 @@
       ],
       "priority": 7,
       "passes": true,
-      "notes": "Completed 2026-02-27: Created components/Resume.tsx as a server component. Section with id='resume' and py-24 md:py-32 px-6 padding. Heading 'Resume' at text-4xl/md:text-6xl font-bold. Prominent 'Download PDF' anchor button (bg-[#FF4400] text-[#F4F4F4] px-8 py-4) linking to /resume.pdf with download attribute. Skills block with 3 groups (Languages, Frameworks, Tools), each with 5 placeholder skill tags (same pill style: bg-[#1A1A1A] border border-[#757575] text-[#D1E0E8] text-xs px-2 py-1 rounded). Skill groups in grid-cols-1 (mobile) → md:grid-cols-3. Education block with one placeholder entry (University of Milan, B.Sc. Computer Science, 2018–2022) in text-[#757575]. Created public/resume.pdf as placeholder empty file. Resume imported and rendered in app/page.tsx. Typecheck passes."
+      "notes": "Completed 2026-02-27: Created components/Resume.tsx as a server component. Section with id='resume' and py-24 md:py-32 px-6 padding. Heading 'Resume' at text-4xl/md:text-6xl font-bold. Prominent 'Download PDF' anchor button (bg-[#FF4400] text-[#F4F4F4] px-8 py-4) linking to /resume.pdf with download attribute. Skills block with 3 groups (Languages, Frameworks, Tools), each with 5 placeholder skill tags (same pill style: bg-[#1A1A1A] border border-[#757575] text-[#D1E0E8] text-xs px-2 py-1 rounded). Skill groups in grid-cols-1 (mobile) → md:grid-cols-3. Education block with one placeholder entry (University of Milan, B.Sc. Computer Science, 2018-2022) in text-[#757575]. Created public/resume.pdf as placeholder empty file. Resume imported and rendered in app/page.tsx. Typecheck passes."
     },
     {
       "id": "US-008",
