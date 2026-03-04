@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState, useCallback } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import Link from 'next/link';
@@ -10,40 +10,96 @@ import remarkGfm from 'remark-gfm';
 import type { Components } from 'react-markdown';
 import type { Project } from '@/lib/projects';
 
-const markdownComponents: Components = {
-  h2({ children }) {
-    return (
-      <h2
-        style={{
-          fontFamily: 'var(--font-barlow)',
-          fontWeight: 800,
-          fontSize: 'clamp(1.5rem, 3vw, 2.25rem)',
-          color: '#FF4400',
-          letterSpacing: '-0.02em',
-          marginTop: '2.5rem',
-          marginBottom: '1rem',
-        }}
-      >
-        {children}
-      </h2>
-    );
-  },
-  img({ src, alt }) {
-    if (!src || typeof src !== 'string') return null;
-    return (
-      <span className="block my-8">
+function Lightbox({ src, alt, onClose }: { src: string; alt: string; onClose: () => void }) {
+  const overlayRef = useRef<HTMLDivElement>(null);
+  const imgRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    gsap.fromTo(overlayRef.current, { opacity: 0 }, { opacity: 1, duration: 0.25, ease: 'power2.out' });
+    gsap.fromTo(imgRef.current, { scale: 0.9, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: 'power3.out' });
+  }, []);
+
+  const close = useCallback(() => {
+    gsap.to(overlayRef.current, {
+      opacity: 0,
+      duration: 0.2,
+      ease: 'power2.in',
+      onComplete: onClose,
+    });
+  }, [onClose]);
+
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => { if (e.key === 'Escape') close(); };
+    window.addEventListener('keydown', handler);
+    return () => window.removeEventListener('keydown', handler);
+  }, [close]);
+
+  return (
+    <div
+      ref={overlayRef}
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 cursor-zoom-out p-4"
+      onClick={close}
+    >
+      <div ref={imgRef} className="relative max-w-5xl w-full" onClick={(e) => e.stopPropagation()}>
         <Image
           src={src}
-          alt={alt ?? 'project image'}
-          width={1200}
-          height={900}
-          className="max-w-xs w-full h-auto rounded-lg"
-          style={{ objectFit: 'contain' }}
+          alt={alt}
+          width={1600}
+          height={1200}
+          className="w-full h-auto rounded-lg object-contain max-h-[90vh]"
         />
-      </span>
-    );
-  },
-};
+        <button
+          onClick={close}
+          className="absolute top-3 right-3 text-white/70 hover:text-white text-2xl leading-none bg-black/40 rounded-full w-8 h-8 flex items-center justify-center"
+          aria-label="Close"
+        >
+          ×
+        </button>
+      </div>
+    </div>
+  );
+}
+
+function MarkdownImage({ src, alt, onOpen }: { src: string; alt: string; onOpen: (src: string, alt: string) => void }) {
+  return (
+    <span className="block my-8 cursor-zoom-in" onClick={() => onOpen(src, alt)}>
+      <Image
+        src={src}
+        alt={alt}
+        width={1200}
+        height={900}
+        className="max-w-xs w-full h-auto rounded-lg transition-opacity hover:opacity-80"
+        style={{ objectFit: 'contain' }}
+      />
+    </span>
+  );
+}
+
+function buildMarkdownComponents(onOpen: (src: string, alt: string) => void): Components {
+  return {
+    h2({ children }) {
+      return (
+        <h2
+          style={{
+            fontFamily: 'var(--font-barlow)',
+            fontWeight: 800,
+            fontSize: 'clamp(1.5rem, 3vw, 2.25rem)',
+            color: '#FF4400',
+            letterSpacing: '-0.02em',
+            marginTop: '2.5rem',
+            marginBottom: '1rem',
+          }}
+        >
+          {children}
+        </h2>
+      );
+    },
+    img({ src, alt }) {
+      if (!src || typeof src !== 'string') return null;
+      return <MarkdownImage src={src} alt={alt ?? 'project image'} onOpen={onOpen} />;
+    },
+  };
+}
 
 interface Props {
   project: Project;
@@ -52,6 +108,9 @@ interface Props {
 export default function ProjectDetail({ project }: Props) {
   const sectionRef = useRef<HTMLElement>(null);
   const hasRunEnterAnim = useRef(false);
+  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
+  const openLightbox = useCallback((src: string, alt: string) => setLightbox({ src, alt }), []);
+  const markdownComponents = buildMarkdownComponents(openLightbox);
 
   useEffect(() => {
     if (hasRunEnterAnim.current) return;
@@ -144,8 +203,11 @@ export default function ProjectDetail({ project }: Props) {
         </Link>
 
         {project.coverImage && (
-          <div className="relative aspect-video rounded-lg overflow-hidden mb-10">
-            <Image src={project.coverImage} alt={project.title} fill className="object-cover" />
+          <div
+            className="relative aspect-video rounded-lg overflow-hidden mb-10 cursor-zoom-in"
+            onClick={() => openLightbox(project.coverImage!, project.title)}
+          >
+            <Image src={project.coverImage} alt={project.title} fill className="object-cover transition-opacity hover:opacity-80" />
           </div>
         )}
 
@@ -194,6 +256,10 @@ export default function ProjectDetail({ project }: Props) {
           </ReactMarkdown>
         </div>
       </div>
+
+      {lightbox && (
+        <Lightbox src={lightbox.src} alt={lightbox.alt} onClose={() => setLightbox(null)} />
+      )}
     </main>
   );
 }

@@ -2,6 +2,7 @@
 title: "ST-Keeb-67"
 description: "The alice-like keyboard you are looking at - handwired keyboard with plasma-cut inox frame and 3D printed split plate"
 tags: ["Design", "Firmware", "Prototyping", "3D Modeling", "Electronic",  "Plasma Cutting"]
+coverImage: /images/st_keeb.jpeg
 year: 2023
 github: "https://github.com/simoTra/st_keeb"
 ---
