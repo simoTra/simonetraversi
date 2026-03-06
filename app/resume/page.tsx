@@ -34,6 +34,7 @@ export default function ResumePage() {
             <div className="resume-subtitle">{person.subtitle}</div>
             <div className="resume-contact-bar">
               <a href={`mailto:${person.contact.email}`}>{person.contact.email}</a>
+              <a href={`${person.contact.website}`}>simonetraversi.it</a>
               <a href={`tel:${person.contact.phone.replace(/\s/g, '')}`}>{person.contact.phone}</a>
               <span>{person.contact.location}</span>
               <a href={person.social.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>

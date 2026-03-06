@@ -11,6 +11,9 @@ export default function Footer() {
             <a href={`mailto:${person.contact.email}`} className="hover:text-[#FF4400] transition-colors duration-200">
               {person.contact.email}
             </a>
+            <a href={`${person.contact.website}`} className="hover:text-[#FF4400] transition-colors duration-200">
+              {person.contact.website}
+            </a>
             <a href={`tel:${person.contact.phone.replace(/\s/g, '')}`} className="hover:text-[#FF4400] transition-colors duration-200">
               {person.contact.phone}
             </a>

@@ -17,6 +17,7 @@ export const person = {
     email: 'simone.traversi4@gmail.com',
     phone: '+39 366 704 3677',
     location: 'Turin, Italy',
+    website: 'https://www.simonetraversi.it'
   },
   social: {
     linkedin: 'https://www.linkedin.com/in/simone-traversi-392b0518b/',
