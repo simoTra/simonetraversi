@@ -89,10 +89,8 @@ export default function Hero() {
       <div className="max-w-6xl mx-auto w-full flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
         <div className="flex-1">
           <h1 ref={h1Ref} className="h1-display">
-            {person.name.first}
-          </h1>
-          <h1 className="h1-display mb-6 ml-32 sm:ml-18">
-            {person.name.last}
+            <span className="block">{person.name.first}</span>
+            <span className="block mb-6 ml-32 sm:ml-18">{person.name.last}</span>
           </h1>
 
           <p ref={subtitleRef} className="text-xl md:text-2xl text-[#757575] mb-6">

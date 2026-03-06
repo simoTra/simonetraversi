@@ -15,9 +15,29 @@ export async function generateMetadata({
   const { slug } = await params;
   try {
     const project = getProjectBySlug(slug);
+    const url = `https://simonetraversi.it/projects/${slug}`;
+    const image = project.coverImage
+      ? `https://simonetraversi.it${project.coverImage}`
+      : 'https://simonetraversi.it/opengraph-image';
     return {
-      title: `${project.title} — Simone Traversi`,
+      title: project.title,
       description: project.description,
+      keywords: [...project.tags, 'Simone Traversi', 'robotics', 'engineering'],
+      alternates: { canonical: url },
+      openGraph: {
+        type: 'article',
+        url,
+        title: project.title,
+        description: project.description,
+        images: [{ url: image }],
+        siteName: 'Simone Traversi',
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: project.title,
+        description: project.description,
+        images: [image],
+      },
     };
   } catch {
     return { title: 'Project — Simone Traversi' };
@@ -38,5 +58,33 @@ export default async function ProjectPage({
     notFound();
   }
 
-  return <ProjectDetail project={project} />;
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'CreativeWork',
+    name: project.title,
+    description: project.description,
+    url: `https://simonetraversi.it/projects/${slug}`,
+    dateCreated: String(project.year),
+    keywords: project.tags.join(', '),
+    image: project.coverImage
+      ? `https://simonetraversi.it${project.coverImage}`
+      : undefined,
+    ...(project.link ? { sameAs: project.link } : {}),
+    ...(project.github ? { codeRepository: project.github } : {}),
+    author: {
+      '@type': 'Person',
+      name: 'Simone Traversi',
+      url: 'https://simonetraversi.it',
+    },
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <ProjectDetail project={project} />
+    </>
+  );
 }
