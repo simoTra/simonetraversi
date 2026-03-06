@@ -23,6 +23,8 @@ const inter = Inter({
 const description =
   'Robotics software engineer and full-stack developer from Turin, Italy. Expert in KUKA, ABB, FANUC robots, Flutter, Next.js, NestJS. Software Engineer at Makr Shakr — building robotic bar systems.';
 
+const ogDescription = 'Robotics software engineer & full-stack dev from Turin, Italy.';
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://simonetraversi.it'),
   title: {
@@ -39,7 +41,14 @@ export const metadata: Metadata = {
   authors: [{ name: 'Simone Traversi', url: 'https://simonetraversi.it' }],
   creator: 'Simone Traversi',
   robots: { index: true, follow: true },
-  alternates: { canonical: 'https://simonetraversi.it' },
+  formatDetection: { telephone: false, email: false, address: false },
+  alternates: {
+    canonical: 'https://simonetraversi.it',
+    languages: {
+      'en': 'https://simonetraversi.it',
+      'x-default': 'https://simonetraversi.it',
+    },
+  },
   openGraph: {
     type: 'profile',
     url: 'https://simonetraversi.it',

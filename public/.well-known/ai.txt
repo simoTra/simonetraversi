@@ -1,0 +1,32 @@
+User-agent: *
+Allow: /
+
+# AI Search Engines & LLM Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+# Site information for AI indexing
+Site: https://simonetraversi.it
+Owner: Simone Traversi
+Contact: simone.traversi4@gmail.com
+Language: en
+Topic: robotics, software engineering, full-stack development, industrial automation
+LLMs-txt: https://simonetraversi.it/llms.txt

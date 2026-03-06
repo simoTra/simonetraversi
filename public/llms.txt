@@ -1,0 +1,37 @@
+# Simone Traversi
+
+> Robotics Software Engineer & Full-Stack Developer based in Turin, Italy.
+
+## About
+
+Simone Traversi (born 1999, Turin, Italy) is a robotics software engineer and full-stack developer. Since 2018 he has programmed industrial robots (KUKA, ABB, FANUC, Comau) and trained over 500 students in industrial robotics. He currently works at Makr Shakr SRL as a Software Engineer, developing software for robotic bar systems used in hotels, cruise ships, and events worldwide.
+
+## Current Role
+
+**Software Engineer at Makr Shakr SRL** (Turin, Italy)
+- Develops the Flutter mobile app that controls robotic bar systems
+- Programs KUKA robotic arms (KRL)
+- Engineers 3D-printed custom components for bar hardware
+
+## Skills & Expertise
+
+**Robotics:** KUKA (KRL), ABB (RAPID), FANUC (KAREL), Comau, Pollen Reachy, OPC-UA integration, motion simulation
+**Software:** Flutter/Dart, React, Next.js, NestJS, TypeScript, Python, C/C++, ROS, Docker, PostgreSQL
+**Hardware:** ESP32, embedded systems, 3D printing (FDM/resin), Fusion 360, CFD studies, plasma cutting
+
+## Notable Projects
+
+- **Speed Skiing Rear Fairings** — Aerodynamic fairings for the Speed Skiing World Cup using 3D scanning, Fusion 360, and CFD.
+- **Amazing Hand PWM Controller** — ESP32 robotic hand controller driving 4 fingers via 8 servo motors.
+- **AB Ski Lessons Zermatt** — Multilingual booking site and admin dashboard for a ski school (Next.js, Prisma, Stripe, PostgreSQL).
+- **ST-Keeb-67** — Handwired mechanical keyboard with plasma-cut inox frame and 3D printed split plate.
+- **ProjectaLogs** — Platform for managing 3D printing projects and clients (React, NestJS, Python).
+- **Warpato** — Design project exploring furniture shaped by material honesty and craft constraints.
+
+## Contact & Links
+
+- **Email:** simone.traversi4@gmail.com
+- **Website:** https://simonetraversi.it
+- **LinkedIn:** https://www.linkedin.com/in/simone-traversi-392b0518b/
+- **GitHub:** https://github.com/simoTra
+- **Location:** Turin (Torino), Piedmont, Italy
