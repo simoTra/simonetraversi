@@ -5,6 +5,8 @@ import { TransitionProvider } from "@/context/TransitionContext";
 import PageTransitionOverlay from "@/components/PageTransitionOverlay";
 import Nav from "@/components/Nav";
 import Cursor from "@/components/Cursor";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const barlow = Barlow({
   weight: ["800"],
@@ -213,6 +215,8 @@ export default function RootLayout({
         <TransitionProvider>
           <Nav />
           {children}
+          <Analytics />
+          <SpeedInsights />
           <PageTransitionOverlay />
           <Cursor />
         </TransitionProvider>
