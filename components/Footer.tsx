@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { person } from '@/lib/data/person';
 
 export default function Footer() {
   return (
@@ -7,23 +8,23 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-0 items-center">
 
           <div className="flex flex-col gap-2 text-sm text-[#757575]">
-            <a href="mailto:simone.traversi4@gmail.com" className="hover:text-[#FF4400] transition-colors duration-200">
-              simone.traversi4@gmail.com
+            <a href={`mailto:${person.contact.email}`} className="hover:text-[#FF4400] transition-colors duration-200">
+              {person.contact.email}
             </a>
-            <a href="tel:+393667043677" className="hover:text-[#FF4400] transition-colors duration-200">
-              +39 366 704 3677
+            <a href={`tel:${person.contact.phone.replace(/\s/g, '')}`} className="hover:text-[#FF4400] transition-colors duration-200">
+              {person.contact.phone}
             </a>
-            <span>Turin, Italy</span>
+            <span>{person.contact.location}</span>
           </div>
 
           <div className="flex flex-col items-center gap-3">
-            <Image src="/logo.svg" alt="Simone Traversi" width={64} height={64} />
-            <p className="text-[#757575] text-sm">© 2026 Simone Traversi</p>
+            <Image src="/logo.svg" alt={person.name.full} width={64} height={64} />
+            <p className="text-[#757575] text-sm">© 2026 {person.name.full}</p>
           </div>
 
           <div className="flex flex-col items-start md:items-end gap-2 text-sm">
             <a
-              href="https://www.linkedin.com/in/simone-traversi-392b0518b/"
+              href={person.social.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#757575] hover:text-[#FF4400] transition-colors duration-200"
@@ -31,7 +32,7 @@ export default function Footer() {
               LinkedIn
             </a>
             <a
-              href="https://github.com/simoTra"
+              href={person.social.github}
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#757575] hover:text-[#FF4400] transition-colors duration-200"

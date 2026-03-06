@@ -1,0 +1,406 @@
+/* ─── Screen: white card on site dark canvas ─────────────────────────────── */
+@media screen {
+  body {
+    background: #1a1a1a !important;
+  }
+
+  .resume-document {
+    background: #fff;
+    max-width: 210mm;
+    min-height: 297mm;
+    margin: 2rem auto;
+    padding: 12mm 14mm;
+    box-shadow: 0 4px 32px rgba(0, 0, 0, 0.5);
+  }
+
+  .resume-controls {
+    max-width: 210mm;
+    margin: 0 auto 1rem;
+    padding: 2rem 14mm 0;
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+  }
+
+  .resume-btn-outline {
+    color: #ccc;
+    border-color: #555;
+  }
+
+  .resume-btn-outline:hover {
+    border-color: #ff4400;
+    color: #ff4400;
+  }
+}
+
+/* ─── Print ──────────────────────────────────────────────────────────────── */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 12mm 14mm;
+  }
+
+  body {
+    background: #fff !important;
+  }
+
+  nav,
+  [data-cursor],
+  [data-page-overlay] {
+    display: none !important;
+  }
+
+  .resume-controls {
+    display: none !important;
+  }
+
+  .resume-document {
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    max-width: none;
+    min-height: none;
+  }
+}
+
+/* ─── Typography ─────────────────────────────────────────────────────────── */
+.resume-document {
+  font-family: var(--font-inter, 'Inter', sans-serif);
+  font-size: 8.5pt;
+  color: #111;
+  line-height: 1.45;
+}
+
+.resume-h1 {
+  font-family: var(--font-barlow, 'Barlow', sans-serif);
+  font-weight: 800;
+  font-size: 28pt;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: #111;
+}
+
+.resume-h2 {
+  font-family: var(--font-barlow, 'Barlow', sans-serif);
+  font-weight: 800;
+  font-size: 8pt;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ff4400;
+  margin-bottom: 3mm;
+  padding-bottom: 1mm;
+  border-bottom: 0.5px solid #ff4400;
+}
+
+.resume-subtitle {
+  font-size: 10pt;
+  color: #555;
+  margin-top: 1.5mm;
+  margin-bottom: 3mm;
+}
+
+.resume-contact-bar {
+  font-size: 7.5pt;
+  color: #444;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2mm 5mm;
+  margin-bottom: 2mm;
+}
+
+.resume-contact-bar a {
+  color: #444;
+  text-decoration: none;
+}
+
+.resume-contact-bar a:hover {
+  color: #ff4400;
+}
+
+/* ─── Header with photo ──────────────────────────────────────────────────── */
+.resume-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 6mm;
+  margin-bottom: 3mm;
+}
+
+.resume-header-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.resume-header-photo {
+  width: 28mm;
+  height: 35mm;
+  object-fit: cover;
+  object-position: center top;
+  flex-shrink: 0;
+  border-radius: 1px;
+}
+
+/* ─── Divider ────────────────────────────────────────────────────────────── */
+.resume-divider {
+  border: none;
+  border-top: 1px solid #ff4400;
+  margin: 3mm 0 4mm;
+}
+
+/* ─── 2-column body ──────────────────────────────────────────────────────── */
+.resume-body {
+  display: grid;
+  grid-template-columns: 38% 1fr;
+  gap: 0 8mm;
+}
+
+.resume-col-left,
+.resume-col-right {
+  min-width: 0;
+}
+
+/* ─── Tags ───────────────────────────────────────────────────────────────── */
+.resume-tag {
+  display: inline-block;
+  font-size: 6.5pt;
+  border: 0.5px solid #888;
+  padding: 0.5mm 2mm;
+  border-radius: 2px;
+  color: #444;
+  margin: 0.5mm 0.5mm 0.5mm 0;
+  white-space: nowrap;
+}
+
+.resume-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+/* ─── Skills ─────────────────────────────────────────────────────────────── */
+.resume-skill-group {
+  margin-bottom: 4mm;
+}
+
+.resume-skill-group-label {
+  font-size: 7pt;
+  font-weight: 600;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 1.5mm;
+}
+
+/* ─── Experience ─────────────────────────────────────────────────────────── */
+.resume-exp-entry {
+  margin-bottom: 4.5mm;
+  break-inside: avoid;
+}
+
+.resume-exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 2mm;
+}
+
+.resume-exp-with-icon {
+  display: flex;
+  gap: 2.5mm;
+  align-items: flex-start;
+}
+
+.resume-exp-icon {
+  width: 7mm;
+  height: 7mm;
+  object-fit: contain;
+  flex-shrink: 0;
+  margin-top: 0.5mm;
+}
+
+.resume-exp-company {
+  font-weight: 700;
+  font-size: 8.5pt;
+  color: #111;
+}
+
+.resume-exp-dates {
+  font-size: 7pt;
+  color: #666;
+  white-space: nowrap;
+}
+
+.resume-exp-role {
+  font-size: 7.5pt;
+  color: #444;
+  margin-bottom: 1mm;
+}
+
+.resume-exp-desc {
+  font-size: 7.5pt;
+  color: #333;
+  margin-bottom: 1.5mm;
+  line-height: 1.4;
+}
+
+.resume-exp-bullets {
+  margin: 0;
+  padding-left: 3.5mm;
+}
+
+.resume-exp-bullets li {
+  font-size: 7pt;
+  color: #444;
+  margin-bottom: 0.5mm;
+}
+
+/* ─── Education ──────────────────────────────────────────────────────────── */
+.resume-edu-entry {
+  margin-bottom: 4mm;
+  break-inside: avoid;
+}
+
+.resume-edu-with-icon {
+  display: flex;
+  gap: 2.5mm;
+  align-items: flex-start;
+}
+
+.resume-edu-icon {
+  width: 7mm;
+  height: 7mm;
+  object-fit: contain;
+  flex-shrink: 0;
+  margin-top: 0.5mm;
+}
+
+.resume-edu-institution {
+  font-weight: 700;
+  font-size: 8pt;
+  color: #111;
+}
+
+.resume-edu-degree {
+  font-size: 7.5pt;
+  color: #444;
+}
+
+.resume-edu-meta {
+  font-size: 7pt;
+  color: #777;
+}
+
+/* ─── Projects ───────────────────────────────────────────────────────────── */
+.resume-project-entry {
+  display: flex;
+  gap: 3mm;
+  margin-bottom: 4mm;
+  break-inside: avoid;
+}
+
+.resume-project-img {
+  width: 26mm;
+  height: 16mm;
+  object-fit: cover;
+  flex-shrink: 0;
+  border-radius: 1px;
+}
+
+.resume-project-img-placeholder {
+  width: 26mm;
+  height: 16mm;
+  background: #eee;
+  flex-shrink: 0;
+  border-radius: 1px;
+}
+
+.resume-project-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.resume-project-title-row {
+  display: flex;
+  align-items: baseline;
+  gap: 2mm;
+  margin-bottom: 0.5mm;
+}
+
+.resume-project-title {
+  font-weight: 700;
+  font-size: 8pt;
+  color: #111;
+}
+
+.resume-project-link {
+  font-size: 6.5pt;
+  color: #ff4400;
+  text-decoration: none;
+}
+
+.resume-project-link:hover {
+  text-decoration: underline;
+}
+
+.resume-project-desc {
+  font-size: 7pt;
+  color: #444;
+  margin-bottom: 1.5mm;
+  line-height: 1.4;
+}
+
+/* ─── Section spacing ────────────────────────────────────────────────────── */
+.resume-section {
+  margin-bottom: 5mm;
+}
+
+/* ─── Page break ─────────────────────────────────────────────────────────── */
+.resume-page-break {
+  break-after: page;
+  page-break-after: always;
+  display: block;
+  height: 0;
+}
+
+/* ─── Bio / Summary ──────────────────────────────────────────────────────── */
+.resume-bio {
+  font-size: 8pt;
+  color: #333;
+  line-height: 1.5;
+  margin-bottom: 1mm;
+}
+
+/* ─── Print button ───────────────────────────────────────────────────────── */
+.resume-btn {
+  background: #ff4400;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: background 0.15s;
+}
+
+.resume-btn:hover {
+  background: #d93b00;
+}
+
+.resume-btn-outline {
+  background: transparent;
+  color: #333;
+  border: 1px solid #aaa;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.resume-btn-outline:hover {
+  border-color: #ff4400;
+  color: #ff4400;
+}

@@ -1,49 +1,14 @@
 'use client';
 
 import { useRef } from 'react';
+import Image from 'next/image';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { skillGroups } from '@/lib/data/skills';
+import { education } from '@/lib/data/education';
 
 gsap.registerPlugin(ScrollTrigger);
-
-const skillGroups = [
-  {
-    label: 'Languages',
-    skills: ['TypeScript', 'Dart', 'JavaScript', 'Python', 'Java', 'C/C++', 'SQL', '...'],
-  },
-  {
-    label: 'Frameworks & Libraries',
-    skills: ['Flutter', 'React', 'NestJS', 'Next.js', 'Tailwind CSS', 'Platformio', 'Arduino IDE', '...'],
-  },
-  {
-    label: 'Tools & Technologies',
-    skills: ['Git', 'Docker', 'PostgreSQL', 'Redis', 'MongoDB', 'MQTT', 'Embedded Systems', '3D Printing', 'Fusion 360', '...'],
-  },
-  {
-    label: 'Robotics, Industrial Automation & Communication',
-    skills: [
-      'KUKA Robots',
-      'ABB Robots',
-      'FANUC Robots',
-      'e.DO Robots',
-      'RoboGuide',
-      'Robot Programming',
-      'Motion Simulation',
-      'Industrial Automation',
-      'I2C, UART',
-      '...'
-    ],
-  },
-  {
-    label: 'Management & Tracking',
-    skills: ['Jira', 'Trello', 'Notion', 'Slack', '...'],
-  },
-  {
-    label: 'AI & Automation',
-    skills: ['Claude API', 'OpenAI API', 'MCP Servers', 'AI Agents', 'Prompt Engineering', 'LangChain', 'RAG', '...'],
-  },
-];
 
 export default function Resume() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -101,8 +66,7 @@ export default function Resume() {
 
         <div className="mb-16">
           <a
-            href="/resume.pdf"
-            download
+            href="/resume"
             className="inline-block bg-[#FF4400] text-[#F4F4F4] px-8 py-4 font-semibold transition-colors duration-200 hover:bg-[#D93B00]"
           >
             Download PDF
@@ -138,29 +102,22 @@ export default function Resume() {
         <div className="education-block">
           <h3 className="h3-display mb-8">Education</h3>
 
-          <div className="mb-6">
-            <p className="text-[#F4F4F4] font-semibold">Università degli Studi di Torino</p>
-            <p className="text-[#D1E0E8]">Innovation And Communication Technology</p>
-            <p className="text-[#757575] text-sm">2019 - 2022 | Grade: 104</p>
-          </div>
-
-          <div className="mb-6">
-            <p className="text-[#F4F4F4] font-semibold">Vento</p>
-            <p className="text-[#D1E0E8]">SEI Inventor - Specialised Course, Entrepreneurship / Prototyping Bootcamp</p>
-            <p className="text-[#757575] text-sm">2020 | Full Certification</p>
-          </div>
-
-          <div className="mb-6">
-            <p className="text-[#F4F4F4] font-semibold">Università degli Studi di Torino</p>
-            <p className="text-[#D1E0E8]">Computer Science</p>
-            <p className="text-[#757575] text-sm">2018 - 2019</p>
-          </div>
-
-          <div className="mb-6">
-            <p className="text-[#F4F4F4] font-semibold">IIS Galilei Ferrari</p>
-            <p className="text-[#D1E0E8]">Perito Meccatronico ed Energetico, Robotico</p>
-            <p className="text-[#757575] text-sm">2013 - 2018 | Grade: 93</p>
-          </div>
+          {education.map((entry) => (
+            <div key={entry.institution + entry.period} className="mb-6 flex gap-4 items-start">
+              {entry.icon && (
+                <div className="w-12 h-12 shrink-0 rounded-sm overflow-hidden bg-[#1A1A1A] border border-[#757575]/40">
+                  <Image src={entry.icon} alt={entry.institution} width={48} height={48} className="w-full h-full object-contain p-1" />
+                </div>
+              )}
+              <div>
+                <p className="text-[#F4F4F4] font-semibold">{entry.institution}</p>
+                <p className="text-[#D1E0E8]">{entry.degree}</p>
+                <p className="text-[#757575] text-sm">
+                  {entry.period}{entry.grade ? ` | Grade: ${entry.grade}` : ''}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

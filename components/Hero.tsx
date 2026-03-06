@@ -6,6 +6,7 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SplitText } from 'gsap/SplitText';
+import { person } from '@/lib/data/person';
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
@@ -88,14 +89,14 @@ export default function Hero() {
       <div className="max-w-6xl mx-auto w-full flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
         <div className="flex-1">
           <h1 ref={h1Ref} className="h1-display">
-            Simone
+            {person.name.first}
           </h1>
           <h1 className="h1-display mb-6 ml-32 sm:ml-18">
-            Traversi
+            {person.name.last}
           </h1>
 
           <p ref={subtitleRef} className="text-xl md:text-2xl text-[#757575] mb-6">
-            Robotics, Software &amp; Creative 3D Experiments
+            {person.subtitle}
           </p>
 
           <p ref={descRef} className="text-base md:text-lg text-[#D1E0E8] max-w-2xl mb-10">
@@ -124,8 +125,8 @@ export default function Hero() {
 
         <div ref={imageRef} className="w-72 h-96 lg:w-96 lg:h-130 shrink-0 rounded-sm overflow-hidden">
           <Image
-            src="/images/simoneHome.jpeg"
-            alt="Simone Traversi"
+            src={person.photo}
+            alt={person.name.full}
             width={400}
             height={600}
             className="w-full h-full object-cover scale-x-[-1]"

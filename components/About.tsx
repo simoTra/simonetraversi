@@ -6,6 +6,7 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SplitText } from 'gsap/SplitText';
+import { person } from '@/lib/data/person';
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
@@ -22,7 +23,7 @@ export default function About() {
   const sectionRef = useRef<HTMLElement>(null);
   const h2Ref = useRef<HTMLHeadingElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
-  const bodyTextRef = useRef<HTMLParagraphElement>(null);
+  const bodyTextRef = useRef<HTMLDivElement>(null);
   const listRef = useRef<HTMLUListElement>(null);
   const slideRefs = useRef<(HTMLDivElement | null)[]>([]);
   const currentIdx = useRef(0);
@@ -155,7 +156,7 @@ export default function About() {
           <span className="border-b-2 border-[#FF4400] inline-block pb-1">About</span>
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
           <div ref={imageRef} className="relative aspect-square w-full overflow-hidden group">
             {IMAGES.map((src, i) => (
               <div
@@ -195,35 +196,38 @@ export default function About() {
                 <button
                   key={i}
                   onClick={() => goToSlide(i)}
-                  className={`w-1.5 h-1.5 rounded-full transition-colors duration-200 cursor-pointer ${
-                    activeDot === i ? 'bg-[#FF4400]' : 'bg-[#F4F4F4]/50'
-                  }`}
+                  className={`w-1.5 h-1.5 rounded-full transition-colors duration-200 cursor-pointer ${activeDot === i ? 'bg-[#FF4400]' : 'bg-[#F4F4F4]/50'
+                    }`}
                   aria-label={`Go to slide ${i + 1}`}
                 />
               ))}
             </div>
           </div>
 
-          <div>
-            <p ref={bodyTextRef} className="text-[#D1E0E8] text-base md:text-lg mb-8 leading-relaxed">
-              I&apos;m a robotics software engineer and full-stack developer, passionate about building intuitive interfaces that make complex machines easy to control. I thrive at the intersection of code, automation, and hands-on experimentation, turning ideas into interactive systems.
-            </p>
+          <div className="flex flex-col gap-8">
+            <div ref={bodyTextRef} className="text-[#D1E0E8] text-base md:text-lg leading-relaxed space-y-4">
+              {person.bio.map((para, i) => (
+                <p key={i}>{para.split(/\*\*(.+?)\*\*/).map((part, j) =>
+                  j % 2 === 1 ? <strong key={j}>{part}</strong> : part
+                )}</p>
+              )).slice(0, 3)}
+            </div>
 
-            <ul ref={listRef} className="space-y-3">
-              <li className="text-[#D1E0E8]">
-                <span className="text-[#FF4400]">→</span> Robotics programming & industrial automation
-              </li>
-              <li className="text-[#D1E0E8]">
-                <span className="text-[#FF4400]">→</span> Full-stack & embedded software development
-              </li>
-              <li className="text-[#D1E0E8]">
-                <span className="text-[#FF4400]">→</span> 3D prototyping & experimental tinkering
-              </li>
-              <li className="text-[#D1E0E8]">
-                <span className="text-[#FF4400]">→</span> UX-driven interfaces for complex systems
-              </li>
-            </ul>
           </div>
+          <div ref={bodyTextRef} className="text-[#D1E0E8] text-base md:text-lg leading-relaxed">
+            {person.bio.map((para, i) => (
+              <p key={i}>{para.split(/\*\*(.+?)\*\*/).map((part, j) =>
+                j % 2 === 1 ? <strong key={j}>{part}</strong> : part
+              )}</p>
+            )).slice(3, 4)}
+          </div>
+          <ul ref={listRef} className="space-y-3">
+            {person.highlights.map((item) => (
+              <li key={item} className="text-[#D1E0E8]">
+                <span className="text-[#FF4400]">→</span> {item}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>

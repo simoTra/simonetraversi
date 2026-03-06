@@ -1,55 +1,13 @@
 'use client';
 
 import { useRef } from 'react';
+import Image from 'next/image';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { experience } from '@/lib/data/experience';
 
 gsap.registerPlugin(ScrollTrigger);
-
-const entries = [
-  {
-    company: 'Fanuc - Sanoma',
-    role: 'Robotic and Industrial Automation Trainer',
-    dates: '2023 - Present',
-    description: "I deliver hands-on training in industrial robotics, helping students and professionals program and operate FANUC robots. Focus on motion simulation, process optimization, and preparing participants for FANUC Robotics Certification.",
-    bullets: [
-      'Precision handling of industrial robots',
-      'Robot programming and configuration',
-      'Motion simulation and validation (RoboGuide)',
-      'Cycle-time analysis and optimization',
-      'Teaching and certification support',
-    ],
-  },
-  {
-    company: 'Makrshakr SRL',
-    role: 'Software Engineer',
-    dates: '2022 - Present',
-    description: "I design, develop, and own the mobile experience for robotic bar systems, alongside web, backend, and embedded software. I integrate industrial robots on client sites and support rapid prototyping with 3D printing.",
-    bullets: [
-      'End-to-end ownership of mobile applications (Flutter)',
-      'Web dashboards & NestJS backend integration',
-      'Custom API development & IoT communication (MQTT)',
-      'Industrial robot commissioning and programming (KUKA, ABB)',
-      'Rapid prototyping and 3D fabrication',
-      'Containerized deployments (Docker)',
-      'AI and MCP servers'
-    ],
-  },
-  {
-    company: 'Comau - Pearson',
-    role: 'Robotic and Industrial Automation Trainer',
-    dates: '2018 - 2023',
-    description: "Trained over 500 students in industrial robotics using e.DO robots, fieldbus communication, and programming. Led interactive sessions and teacher training to bridge education with industry-ready skills.",
-    bullets: [
-      'Fieldbus and I/O communication protocols',
-      'Robot operation, configuration, and programming',
-      'e.DO Learning Lab sessions for hands-on learning',
-      'Teacher training & assessment programs',
-      'Empowering students with practical automation competencies',
-    ],
-  },
-];
 
 export default function Experience() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -115,12 +73,18 @@ export default function Experience() {
           />
 
           <div className="space-y-12">
-            {entries.map((entry) => (
+            {experience.map((entry) => (
               <div
                 key={entry.company}
                 className="timeline-entry relative pl-10 md:pl-16"
               >
-                <div className="timeline-dot absolute left-0 top-1.5 w-3 h-3 rounded-full bg-[#FF4400]" />
+                {entry.icon ? (
+                  <div className="timeline-dot absolute left-[-8px] top-0 w-12 h-12 rounded-sm overflow-hidden bg-[#1A1A1A] border border-[#757575]/40">
+                    <Image src={entry.icon} alt={entry.company} width={48} height={48} className="w-full h-full object-contain p-1" />
+                  </div>
+                ) : (
+                  <div className="timeline-dot absolute left-0 top-1.5 w-3 h-3 rounded-full bg-[#FF4400]" />
+                )}
 
                 <div>
                   <p className="text-[#757575] text-sm mb-1">{entry.dates}</p>
