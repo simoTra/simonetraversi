@@ -48,23 +48,17 @@ export default function ResumePage() {
 
           <div className="resume-col-left">
             <div className="resume-section">
-              
+
               <div className="resume-section">
                 <div className="resume-h2">Summary</div>
-                <p className="resume-bio">{person.bio}</p>
-              </div>
-
-              <div className="resume-h2">Skills</div>
-              {skillGroups.map((group) => (
-                <div key={group.label} className="resume-skill-group">
-                  <div className="resume-skill-group-label">{group.label}</div>
-                  <div className="resume-tags">
-                    {group.skills.map((skill) => (
-                      <span key={skill} className="resume-tag">{skill}</span>
-                    ))}
-                  </div>
+                <div className="resume-bio">
+                  {person.bio.map((para, i) => (
+                    <p key={i}>{para.split(/\*\*(.+?)\*\*/).map((part, j) =>
+                      j % 2 === 1 ? <strong key={j}>{part}</strong> : part
+                    )}</p>
+                  ))}
                 </div>
-              ))}
+              </div>
             </div>
           </div>
 
@@ -104,6 +98,17 @@ export default function ResumePage() {
 
           <div className="resume-col-left">
             <div className="resume-section">
+              <div className="resume-h2">Skills</div>
+              {skillGroups.map((group) => (
+                <div key={group.label} className="resume-skill-group">
+                  <div className="resume-skill-group-label">{group.label}</div>
+                  <div className="resume-tags">
+                    {group.skills.map((skill) => (
+                      <span key={skill} className="resume-tag">{skill}</span>
+                    ))}
+                  </div>
+                </div>
+              ))}
               <div className="resume-h2">Education</div>
               {education.map((entry) => (
                 <div key={entry.institution + entry.period} className="resume-edu-entry">
