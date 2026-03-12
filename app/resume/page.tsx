@@ -127,6 +127,22 @@ export default function ResumePage() {
                   </div>
                 </div>
               ))}
+
+              <div className="resume-h2">Languages</div>
+              {[
+                { flag: '/images/flags/it.svg', language: 'Italian', level: 'Mother Tongue' },
+                { flag: '/images/flags/en.svg', language: 'English', level: 'C1 Level' },
+              ].map(({ flag, language, level }) => (
+                <div key={language} className="resume-edu-entry">
+                  <div className="resume-edu-with-icon">
+                    <Image src={flag} alt={language} width={28} height={28} className="resume-edu-icon" style={{ borderRadius: 2 }} />
+                    <div>
+                      <div className="resume-edu-institution">{language}</div>
+                      <div className="resume-edu-meta">{level}</div>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 
