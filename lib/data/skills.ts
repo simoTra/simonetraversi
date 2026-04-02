@@ -10,7 +10,7 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     label: 'Frameworks & Libraries',
-    skills: ['Flutter', 'React', 'NestJS', 'Next.js', 'Tailwind CSS', 'Platformio', 'Arduino IDE'],
+    skills: ['Flutter', 'React', 'NestJS', 'Next.js', 'Tailwind CSS', 'Platformio', 'Arduino IDE', 'FreeRTOS'],
   },
   {
     label: 'Tools & Technologies',
@@ -27,7 +27,7 @@ export const skillGroups: SkillGroup[] = [
       'Robot Programming',
       'Motion Simulation',
       'Industrial Automation',
-      'I2C, UART',
+      'I2C, UART, Serial Monitoring',
     ],
   },
   {
@@ -36,6 +36,6 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     label: 'AI & Automation',
-    skills: ['Claude API', 'OpenAI API', 'MCP Servers', 'AI Agents', 'Prompt Engineering', 'LangChain', 'RAG'],
+    skills: ['Custom MCP Servers', 'Custom RAG', "n8n Workflows"],
   },
 ];

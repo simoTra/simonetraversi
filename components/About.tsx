@@ -11,7 +11,6 @@ import { person } from '@/lib/data/person';
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const IMAGES = [
-  '/images/simone.jpeg',
   '/images/simone2.jpeg',
   '/images/simone3.jpeg',
   '/images/simone4.jpeg',

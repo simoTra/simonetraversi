@@ -37,7 +37,7 @@ export const experience: ExperienceEntry[] = [
     role: 'Software Engineer',
     dates: '2022 - Present',
     description:
-      'I design, develop, and own the mobile experience for robotic bar systems, alongside web, backend, and embedded software. I integrate industrial robots on client sites and support rapid prototyping with 3D printing.',
+      'I develop and have the responsibility of the mobile experience for robotic bar systems, alongside web, backend, and embedded software. I integrate industrial robots on client sites and support rapid prototyping with 3D printing.',
     bullets: [
       'End-to-end ownership of mobile applications (Flutter)',
       'Web dashboards & NestJS backend integration',
@@ -46,6 +46,7 @@ export const experience: ExperienceEntry[] = [
       'Rapid prototyping and 3D fabrication',
       'Containerized deployments (Docker)',
       'AI and MCP servers',
+      'ESP32 firmware (C++) & Bluetooth Serial for coin reader hardware',
     ],
     icon: '/images/works/ms.png'
   },
