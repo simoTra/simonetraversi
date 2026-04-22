@@ -221,7 +221,6 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/111970d293142c4a5b0f1077a5a828ec/script.js"></script>
         <TransitionProvider>
           <Nav />
           {children}
