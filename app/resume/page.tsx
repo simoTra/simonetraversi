@@ -102,7 +102,7 @@ export default function ResumePage() {
                         <span className="resume-exp-dates">{entry.dates}</span>
                       </div>
                       <div className="resume-exp-role">{entry.role}</div>
-                      <div className="resume-exp-desc">{entry.description}</div>
+                      <div className="resume-exp-desc">{entry.resumeDesc ?? entry.description}</div>
                       <ul className="resume-exp-bullets">
                         {entry.bullets.map((bullet) => (
                           <li key={bullet}>{bullet}</li>

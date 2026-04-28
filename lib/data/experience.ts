@@ -3,6 +3,7 @@ export interface ExperienceEntry {
   role: string;
   dates: string;
   description: string;
+  resumeDesc?: string;
   bullets: string[];
   icon?: string;
 }
@@ -65,6 +66,7 @@ export const collaborations: ExperienceEntry[] = [
     dates: '2024 - 2024',
     description:
       'Part of the evaluation team for the Integrated Robotic Systems category, supporting the technical assessment of competitors\' performance by evaluating robot programming, system integration, troubleshooting, and automation workflows according to competition standards. Contributed to fair judging, technical compliance, and alignment with industrial robotics best practices.',
+    resumeDesc: 'Evaluation team member for the Integrated Robotic Systems category. Assessed robot programming, system integration, troubleshooting, and automation workflows per competition standards.',
     bullets: [],
     icon: '/images/works/wskills.png'
   },
@@ -74,6 +76,7 @@ export const collaborations: ExperienceEntry[] = [
     dates: '2023 - 2023',
     description:
       'Led a 3-month industrial robotics training, helping students progress from basic knowledge to internationally recognized certification. Facilitated hands-on robot handling, taught advanced programming, created real-world simulations, and supervised practical exercises to prepare for exams.',
+    resumeDesc: 'Led a 3-month training from fundamentals to internationally recognized certification, with hands-on robot handling, advanced programming, and real-world simulations.',
     bullets: [],
     icon: '/images/works/ifts.png'
   },
@@ -83,6 +86,7 @@ export const collaborations: ExperienceEntry[] = [
     dates: '2021 - 2021',
     description:
       'Led Robotica 101, an introductory robotics masterclass for high school students, covering robot types, mechanisms, and programming techniques. Engaged students through theoretical explanations and hands-on programming exercises.',
+    resumeDesc: 'Led Robotica 101 for high school students, covering robot types, mechanisms, and programming through hands-on exercises.',
     bullets: [],
     icon: '/images/works/ferrari.png'
   },
