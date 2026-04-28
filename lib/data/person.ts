@@ -1,6 +1,6 @@
 export const person = {
   name: { first: 'Simone', last: 'Traversi', full: 'Simone Traversi' },
-  subtitle: 'Robotics, Software & Creative 3D Experiments',
+  subtitle: 'Robotics and Software Engineering',
   bio: [
     "Born in Turin in 1999, I've always been passionate about technology and its potential to improve and simplify our lives. During high school I explored **3D modeling, 3D printing, and industrial automation**, experiences that shaped my hands-on approach to building technology. After graduating in ICT, I specialized in developing both native and web applications.",
     "Today I work as a **robotics software engineer** and full-stack developer, building intuitive interfaces that make complex machines easier to control. I enjoy prototyping and experimenting, turning ideas into interactive systems that improve efficiency, simplify complex tasks, and sometimes are simply beautiful.",

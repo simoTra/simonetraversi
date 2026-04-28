@@ -60,6 +60,15 @@ export const experience: ExperienceEntry[] = [
 
 export const collaborations: ExperienceEntry[] = [
   {
+    company: 'World Skills',
+    role: 'Robotic Independent Expert',
+    dates: '2024 - 2024',
+    description:
+      'Part of the evaluation team for the Integrated Robotic Systems category, supporting the technical assessment of competitors\' performance by evaluating robot programming, system integration, troubleshooting, and automation workflows according to competition standards. Contributed to fair judging, technical compliance, and alignment with industrial robotics best practices.',
+    bullets: [],
+    icon: '/images/works/wskills.png'
+  },
+  {
     company: 'IFTS',
     role: 'Robotic and Industrial Automation Trainer',
     dates: '2023 - 2023',

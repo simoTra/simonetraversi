@@ -79,7 +79,7 @@ export default function Experience() {
                 className="timeline-entry relative pl-10 md:pl-16"
               >
                 {entry.icon ? (
-                  <div className="timeline-dot absolute left-[-8px] top-0 w-12 h-12 rounded-sm overflow-hidden bg-[#1A1A1A] border border-[#757575]/40">
+                  <div className="timeline-dot absolute -left-2 top-0 w-12 h-12 rounded-sm overflow-hidden bg-[#1A1A1A] border border-[#757575]/40">
                     <Image src={entry.icon} alt={entry.company} width={48} height={48} className="w-full h-full object-contain p-1" />
                   </div>
                 ) : (
@@ -117,7 +117,7 @@ export default function Experience() {
                   className="timeline-entry relative pl-10 md:pl-16"
                 >
                   {entry.icon ? (
-                    <div className="timeline-dot absolute left-[-8px] top-0 w-12 h-12 rounded-sm overflow-hidden bg-[#1A1A1A] border border-[#757575]/40">
+                    <div className="timeline-dot absolute -left-2 top-0 w-12 h-12 rounded-sm overflow-hidden bg-[#1A1A1A] border border-[#757575]/40">
                       <Image src={entry.icon} alt={entry.company} width={48} height={48} className="w-full h-full object-contain p-1" />
                     </div>
                   ) : (

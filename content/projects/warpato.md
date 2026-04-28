@@ -4,6 +4,7 @@ description: "A design project exploring furniture and tools shaped by material 
 tags: ["Design", "Branding", "3D Print"]
 coverImage: /images/warpatoLogo.png
 year: 2026
+link: "https://www.warpato.com/"
 ---
 
 Warpato borrows its name from one of 3D printing's most stubborn defects — warping, the slight curl that happens when plastic cools unevenly and lifts from the bed. It's a failure that reveals something true: materials have memory, and they resist being forced into shapes that ignore it.

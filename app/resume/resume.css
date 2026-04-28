@@ -92,6 +92,18 @@
   border-bottom: 0.5px solid #ff4400;
 }
 
+.resume-h3 {
+  font-family: var(--font-barlow, 'Barlow', sans-serif);
+  font-weight: 800;
+  font-size: 8pt;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ff4400;
+  margin-bottom: 3mm;
+  padding-bottom: 1mm;
+  border-bottom: 0.5px solid #ff4400;
+}
+
 .resume-subtitle {
   font-size: 10pt;
   color: #555;

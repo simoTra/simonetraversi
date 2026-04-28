@@ -74,44 +74,6 @@ export default function Resume() {
           </a>
         </div>
 
-        <div className="mb-16">
-          <h3 className="h3-display mb-8">Experience</h3>
-          <div className="space-y-6 mb-10">
-            {experience.map((entry) => (
-              <div key={entry.company} className="flex gap-4 items-start">
-                {entry.icon && (
-                  <div className="w-12 h-12 shrink-0 rounded-sm overflow-hidden bg-[#1A1A1A] border border-[#757575]/40">
-                    <Image src={entry.icon} alt={entry.company} width={48} height={48} className="w-full h-full object-contain p-1" />
-                  </div>
-                )}
-                <div>
-                  <p className="text-[#F4F4F4] font-semibold">{entry.company}</p>
-                  <p className="text-[#D1E0E8]">{entry.role}</p>
-                  <p className="text-[#757575] text-sm">{entry.dates}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <p className="text-[#757575] text-sm uppercase tracking-widest mb-6">Short-Term Collaborations</p>
-          <div className="space-y-6">
-            {collaborations.map((entry) => (
-              <div key={entry.company} className="flex gap-4 items-start">
-                {entry.icon && (
-                  <div className="w-12 h-12 shrink-0 rounded-sm overflow-hidden bg-[#1A1A1A] border border-[#757575]/40">
-                    <Image src={entry.icon} alt={entry.company} width={48} height={48} className="w-full h-full object-contain p-1" />
-                  </div>
-                )}
-                <div>
-                  <p className="text-[#F4F4F4] font-semibold">{entry.company}</p>
-                  <p className="text-[#D1E0E8]">{entry.role}</p>
-                  <p className="text-[#757575] text-sm">{entry.dates}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
         <div className="mb-16 skill-tags-container">
           <h3 className="h3-display mb-8">Skills</h3>
           <p className="text-[#D1E0E8] text-base md:text-lg mb-8 leading-relaxed pt-4">
