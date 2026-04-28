@@ -10,7 +10,7 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     label: 'Frameworks & Libraries',
-    skills: ['Flutter', 'React', 'NestJS', 'Next.js', 'Tailwind CSS', 'Platformio', 'Arduino IDE', 'FreeRTOS'],
+    skills: ['Flutter', 'React', 'NestJS', 'Next.js', 'Tailwind CSS', 'Platformio', 'Arduino IDE', 'Python','FreeRTOS'],
   },
   {
     label: 'Tools & Technologies',

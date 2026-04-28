@@ -7,6 +7,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { skillGroups } from '@/lib/data/skills';
 import { education } from '@/lib/data/education';
+import { experience, collaborations } from '@/lib/data/experience';
 
 gsap.registerPlugin(ScrollTrigger);
 

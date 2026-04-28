@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { experience } from '@/lib/data/experience';
+import { experience, collaborations } from '@/lib/data/experience';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -79,7 +79,7 @@ export default function Experience() {
                 className="timeline-entry relative pl-10 md:pl-16"
               >
                 {entry.icon ? (
-                  <div className="timeline-dot absolute left-[-8px] top-0 w-12 h-12 rounded-sm overflow-hidden bg-[#1A1A1A] border border-[#757575]/40">
+                  <div className="timeline-dot absolute -left-2 top-0 w-12 h-12 rounded-sm overflow-hidden bg-[#1A1A1A] border border-[#757575]/40">
                     <Image src={entry.icon} alt={entry.company} width={48} height={48} className="w-full h-full object-contain p-1" />
                   </div>
                 ) : (
@@ -101,6 +101,47 @@ export default function Experience() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+
+        <div className="mt-20">
+          <h3 className="h3-display mb-12">Short-Term Collaborations</h3>
+
+          <div className="relative">
+            <div className="absolute top-0 left-1.5 w-px h-full bg-[#757575]/50 origin-top" />
+
+            <div className="space-y-12">
+              {collaborations.map((entry) => (
+                <div
+                  key={entry.company}
+                  className="timeline-entry relative pl-10 md:pl-16"
+                >
+                  {entry.icon ? (
+                    <div className="timeline-dot absolute -left-2 top-0 w-12 h-12 rounded-sm overflow-hidden bg-[#1A1A1A] border border-[#757575]/40">
+                      <Image src={entry.icon} alt={entry.company} width={48} height={48} className="w-full h-full object-contain p-1" />
+                    </div>
+                  ) : (
+                    <div className="timeline-dot absolute left-0 top-1.5 w-3 h-3 rounded-full bg-[#FF4400]" />
+                  )}
+
+                  <div>
+                    <p className="text-[#757575] text-sm mb-1">{entry.dates}</p>
+                    <p className="text-[#F4F4F4] font-semibold text-lg">{entry.company}</p>
+                    <p className="text-[#D1E0E8] mb-3">{entry.role}</p>
+                    <p className="text-[#D1E0E8] mb-3">{entry.description}</p>
+                    {entry.bullets.length > 0 && (
+                      <ul className="space-y-1">
+                        {entry.bullets.map((bullet, i) => (
+                          <li key={i} className="text-[#D1E0E8] text-sm list-disc">
+                            {bullet}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
