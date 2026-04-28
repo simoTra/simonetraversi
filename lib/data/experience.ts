@@ -24,15 +24,6 @@ export const experience: ExperienceEntry[] = [
     icon: '/images/works/sanomaFauc.png'
   },
   {
-    company: 'IFTS',
-    role: 'Robotic and Industrial Automation Trainer',
-    dates: '2023 - 2023',
-    description:
-      'Led a 3-month industrial robotics training, helping students progress from basic knowledge to internationally recognized certification. Facilitated hands-on robot handling, taught advanced programming, created real-world simulations, and supervised practical exercises to prepare for exams.',
-    bullets: [],
-    icon: '/images/works/ifts.png'
-  },
-  {
     company: 'Makrshakr SRL',
     role: 'Software Engineer',
     dates: '2022 - Present',
@@ -51,15 +42,6 @@ export const experience: ExperienceEntry[] = [
     icon: '/images/works/ms.png'
   },
   {
-    company: 'Galilei Ferrari',
-    role: 'Robotic and Industrial Automation Trainer',
-    dates: '2021 - 2021',
-    description:
-      'Led Robotica 101, an introductory robotics masterclass for high school students, covering robot types, mechanisms, and programming techniques. Engaged students through theoretical explanations and hands-on programming exercises.',
-    bullets: [],
-    icon: '/images/works/ferrari.png'
-  },
-  {
     company: 'Comau - Pearson',
     role: 'Robotic and Industrial Automation Trainer',
     dates: '2018 - 2023',
@@ -73,5 +55,26 @@ export const experience: ExperienceEntry[] = [
       'Empowering students with practical automation competencies',
     ],
     icon: '/images/works/pearsonComau.png'
+  },
+];
+
+export const collaborations: ExperienceEntry[] = [
+  {
+    company: 'IFTS',
+    role: 'Robotic and Industrial Automation Trainer',
+    dates: '2023 - 2023',
+    description:
+      'Led a 3-month industrial robotics training, helping students progress from basic knowledge to internationally recognized certification. Facilitated hands-on robot handling, taught advanced programming, created real-world simulations, and supervised practical exercises to prepare for exams.',
+    bullets: [],
+    icon: '/images/works/ifts.png'
+  },
+  {
+    company: 'Galilei Ferrari',
+    role: 'Robotic and Industrial Automation Trainer',
+    dates: '2021 - 2021',
+    description:
+      'Led Robotica 101, an introductory robotics masterclass for high school students, covering robot types, mechanisms, and programming techniques. Engaged students through theoretical explanations and hands-on programming exercises.',
+    bullets: [],
+    icon: '/images/works/ferrari.png'
   },
 ];
