@@ -1,6 +1,6 @@
 ---
 title: "Coin Reader Firmware-App"
-description: "ESP32 firmware for the Makrshakr coin reader — migrated from WiFi/HTTP to Bluetooth Serial on the WT32-ETH01 board. Currently running in production."
+description: "ESP32 firmware for the Makrshakr coin reader - migrated from WiFi/HTTP to Bluetooth Serial on the WT32-ETH01 board. Currently running in production."
 tags: ["Firmware", "ESP32", "Bluetooth", "C++", "Flutter", "PlatformIO", "FreeRtos"]
 coverImage: "/images/coinreader.jpeg"
 year: 2025
@@ -29,7 +29,7 @@ The BT device advertises as `CoinReader-XXYY` and responds to some actions.
 
 ## Architecture
 
-`CoinReader` uses `static` class members (`precTime`, `coinValue`, `isNewCoin`) so the free-function ISR can access them without a pointer — a pattern that keeps interrupt handlers compatible with the ESP-IDF/Arduino framework constraints.
+`CoinReader` uses `static` class members (`precTime`, `coinValue`, `isNewCoin`) so the free-function ISR can access them without a pointer - a pattern that keeps interrupt handlers compatible with the ESP-IDF/Arduino framework constraints.
 
 `Application` maintains two coin counters: `pendingCoin` (consumed on `getCoin`, resets to 0) and `coinPulses` (unbounded history, never cleared), giving the host system flexibility in how it tracks credits.
 

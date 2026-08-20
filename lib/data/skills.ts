@@ -6,36 +6,45 @@ export interface SkillGroup {
 export const skillGroups: SkillGroup[] = [
   {
     label: 'Languages',
-    skills: ['TypeScript', 'Dart', 'JavaScript', 'Python', 'Java', 'C/C++', 'SQL'],
+    skills: ['TypeScript', 'JavaScript', 'Dart', 'Python', 'Java', 'C/C++', 'SQL'],
   },
   {
-    label: 'Frameworks & Libraries',
-    skills: ['Flutter', 'React', 'NestJS', 'Next.js', 'Tailwind CSS', 'Platformio', 'Arduino IDE', 'Python','FreeRTOS'],
+    label: 'Frontend',
+    skills: ['React', 'Next.js', 'Flutter', 'Tailwind CSS', 'HTML5', 'CSS3', 'Responsive Design'],
   },
   {
-    label: 'Tools & Technologies',
-    skills: ['Git', 'Docker', 'PostgreSQL', 'Redis', 'MongoDB', 'MQTT', 'Embedded Systems', '3D Printing', 'Fusion 360'],
+    label: 'Backend & APIs',
+    skills: ['NestJS', 'Node.js', 'REST APIs', 'gRPC', 'WebSockets', 'MQTT', 'PostgreSQL', 'MongoDB', 'Redis'],
   },
   {
-    label: 'Robotics, Industrial Automation & Communication',
+    label: 'DevOps & Infrastructure',
+    skills: ['Docker', 'Git', 'CI/CD', 'Linux', 'GitHub Actions', 'Agile', 'Scrum'],
+  },
+  {
+    label: 'Robotics & Real-Time Systems',
     skills: [
-      'KUKA Robots',
-      'ABB Robots',
-      'FANUC Robots',
-      'e.DO Robots',
-      'RoboGuide',
+      'ROS2',
+      'Real-Time Systems',
+      'Hardware-Software Integration',
+      'KUKA',
+      'ABB',
+      'FANUC',
       'Robot Programming',
       'Motion Simulation',
+      'RoboGuide',
       'Industrial Automation',
-      'I2C, UART, Serial Monitoring',
     ],
   },
   {
-    label: 'Management & Tracking',
-    skills: ['Jira', 'Trello', 'Notion', 'Slack'],
+    label: 'Embedded & IoT',
+    skills: ['ESP32', 'PlatformIO', 'Arduino IDE', 'FreeRTOS', 'Bluetooth Serial', 'I2C', 'UART', 'Embedded C/C++'],
   },
   {
-    label: 'AI & Automation',
-    skills: ['Custom MCP Servers', 'Custom RAG', "n8n Workflows"],
+    label: 'AI & Workflow Automation',
+    skills: ['Custom MCP Servers', 'RAG Pipelines', 'LLM Integration', 'n8n', 'Workflow Automation'],
+  },
+  {
+    label: 'Project Management',
+    skills: ['Jira', 'Trello', 'Notion', 'Slack'],
   },
 ];

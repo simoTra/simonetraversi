@@ -13,12 +13,12 @@ npm run typecheck    # TypeScript type check (no emit)
 
 ## Architecture
 
-Personal portfolio site — a single-page Next.js 16 app (App Router) with React 19, Tailwind CSS 4, and GSAP 3 animations.
+Personal portfolio site - a single-page Next.js 16 app (App Router) with React 19, Tailwind CSS 4, and GSAP 3 animations.
 
 **Entry points:**
-- `app/layout.tsx` — Root layout: DM Sans font, metadata, base styles
-- `app/page.tsx` — Composes all section components in order
-- `app/globals.css` — CSS custom properties (5-color palette), Tailwind directives
+- `app/layout.tsx` - Root layout: DM Sans font, metadata, base styles
+- `app/page.tsx` - Composes all section components in order
+- `app/globals.css` - CSS custom properties (5-color palette), Tailwind directives
 
 **Sections** (in render order): `Nav` → `Hero` → `About` → `Experience` → `Projects` → `Resume` → `Contact` → `Footer`
 
@@ -31,7 +31,7 @@ Every animated component follows the same structure:
 2. `gsap.registerPlugin(ScrollTrigger)` inside `useGSAP`
 3. `ScrollTrigger` with `trigger`, `start: "top 80%"`, `toggleActions: "play none none none"`
 
-Use `useGSAP` from `@gsap/react` (not `useEffect`) for all GSAP animations — it handles cleanup automatically.
+Use `useGSAP` from `@gsap/react` (not `useEffect`) for all GSAP animations - it handles cleanup automatically.
 
 ## Styling Conventions
 
@@ -43,7 +43,7 @@ Use `useGSAP` from `@gsap/react` (not `useEffect`) for all GSAP animations — i
 
 ## Data
 
-All content (experience entries, projects, skills) is stored as literal arrays inside each component — no database or API calls. Edit the arrays directly to update content.
+All content (experience entries, projects, skills) is stored as literal arrays inside each component - no database or API calls. Edit the arrays directly to update content.
 
 ## TypeScript
 

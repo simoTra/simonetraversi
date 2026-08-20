@@ -40,7 +40,7 @@ export async function generateMetadata({
       },
     };
   } catch {
-    return { title: 'Project — Simone Traversi' };
+    return { title: 'Project - Simone Traversi' };
   }
 }
 

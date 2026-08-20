@@ -9,13 +9,13 @@ github: "https://github.com/simoTra/amazing_hand_esp32_pwm"
 
 # ESP32-Powered Robotic Hand with PWM Servo Control
 
-A custom firmware adaptation for the [Amazing Hand](https://github.com/pollen-robotics/amazing-hand) by Pollen Robotics — redesigned from the ground up to drive standard PWM servos via an Adafruit PCA9685 driver, controlled by an ESP32 with a built-in web interface.
+A custom firmware adaptation for the [Amazing Hand](https://github.com/pollen-robotics/amazing-hand) by Pollen Robotics - redesigned from the ground up to drive standard PWM servos via an Adafruit PCA9685 driver, controlled by an ESP32 with a built-in web interface.
 
 ![Demo](https://raw.githubusercontent.com/simoTra/amazing_hand_esp32_pwm/refs/heads/main/docs/images/demo.gif)
 
 ## The Problem
 
-The original Amazing Hand design relies on Feetech SCS0009 serial bus servos, which require a dedicated serial protocol and specific hardware to drive. Replacing them with widely available PDI-1109MG PWM servos makes the build cheaper, more accessible, and easier to source — but requires a completely different control layer.
+The original Amazing Hand design relies on Feetech SCS0009 serial bus servos, which require a dedicated serial protocol and specific hardware to drive. Replacing them with widely available PDI-1109MG PWM servos makes the build cheaper, more accessible, and easier to source - but requires a completely different control layer.
 
 This project replaces the servo driver stack entirely: an ESP32 talks I2C to an Adafruit PCA9685 16-channel PWM board, which in turn drives 8 servos across 4 fingers (2 servos per finger for full flexion control).
 
@@ -45,16 +45,16 @@ The wiring connects the ESP32 to the PCA9685 over I2C, with each servo channel m
 
 ## Software Architecture
 
-The firmware is built with PlatformIO and structured as a modular, non-blocking state machine. No blocking delays — everything runs cooperatively so the system stays responsive during gesture execution, calibration, or web requests.
+The firmware is built with PlatformIO and structured as a modular, non-blocking state machine. No blocking delays - everything runs cooperatively so the system stays responsive during gesture execution, calibration, or web requests.
 
 **Key modules:**
 
-- **ServoController** — wraps the PCA9685 library, translates angular positions to PWM pulse widths
-- **FingerController** — manages each finger's two-servo pair, handles joint coordination
-- **StateManager** — tracks the current system mode (idle, gesture, calibration, demo)
-- **CalibrationManager** — reads/writes per-servo min/max calibration data to NVS (non-volatile storage)
-- **CommandManager** — parses serial input at 115200 baud
-- **WebInterface** — serves a browser UI over Wi-Fi for gesture and calibration control
+- **ServoController** - wraps the PCA9685 library, translates angular positions to PWM pulse widths
+- **FingerController** - manages each finger's two-servo pair, handles joint coordination
+- **StateManager** - tracks the current system mode (idle, gesture, calibration, demo)
+- **CalibrationManager** - reads/writes per-servo min/max calibration data to NVS (non-volatile storage)
+- **CommandManager** - parses serial input at 115200 baud
+- **WebInterface** - serves a browser UI over Wi-Fi for gesture and calibration control
 
 ## Gestures
 
@@ -92,7 +92,7 @@ The ESP32 hosts a web server accessible from any browser on the same network. It
 
 **Calibration panel**
 
-Each servo's min/max pulse width can be tuned individually and saved to persistent storage — no need to reflash to adjust for mechanical tolerances.
+Each servo's min/max pulse width can be tuned individually and saved to persistent storage - no need to reflash to adjust for mechanical tolerances.
 
 ![Calibration interface](https://raw.githubusercontent.com/simoTra/amazing_hand_esp32_pwm/refs/heads/main/docs/images/web_calibration.jpg)
 
@@ -108,6 +108,6 @@ Each servo's min/max pulse width can be tuned individually and saved to persiste
 
 ## Getting Started
 
-Clone the repo and open it in PlatformIO. Build and flash to the ESP32. On first boot, the device creates a Wi-Fi access point — connect to it and navigate to the device IP to open the web interface.
+Clone the repo and open it in PlatformIO. Build and flash to the ESP32. On first boot, the device creates a Wi-Fi access point - connect to it and navigate to the device IP to open the web interface.
 
 Full setup instructions and serial command reference are in the [GitHub repository](https://github.com/simoTra/amazing_hand_esp32_pwm).

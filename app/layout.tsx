@@ -21,7 +21,7 @@ const inter = Inter({
 });
 
 const description =
-  'Robotics software engineer and full-stack developer from Turin, Italy. Expert in KUKA, ABB, FANUC robots, Flutter, Next.js, NestJS. Software Engineer at Makr Shakr — building robotic bar systems.';
+  'Robotics software engineer and full-stack developer from Turin, Italy. Expert in KUKA, ABB, FANUC robots, Flutter, Next.js, NestJS. Software Engineer at Makr Shakr - building robotic bar systems.';
 
 const ogDescription = 'Robotics software engineer & full-stack dev from Turin, Italy.';
 
@@ -154,7 +154,7 @@ const jsonLd = [
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     url: 'https://simonetraversi.it',
-    name: 'Simone Traversi — Portfolio',
+    name: 'Simone Traversi - Portfolio',
     description:
       'Portfolio of Simone Traversi, robotics software engineer and full-stack developer from Turin, Italy.',
     author: { '@type': 'Person', name: 'Simone Traversi' },
@@ -176,7 +176,7 @@ const jsonLd = [
         name: 'What is Makr Shakr and what does Simone Traversi do there?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Makr Shakr SRL is a Turin-based company that builds robotic bar systems — automated cocktail-making machines used in hotels, cruise ships, and events worldwide. Simone Traversi works there as a Software Engineer, developing the Flutter mobile app that controls the robots, programming KUKA robotic arms, and engineering 3D-printed custom components for the bar systems.',
+          text: 'Makr Shakr SRL is a Turin-based company that builds robotic bar systems - automated cocktail-making machines used in hotels, cruise ships, and events worldwide. Simone Traversi works there as a Software Engineer, developing the Flutter mobile app that controls the robots, programming KUKA robotic arms, and engineering 3D-printed custom components for the bar systems.',
         },
       },
       {

@@ -2,7 +2,7 @@
 
 ## Introduction
 
-A single-page personal portfolio website for Simone Traversi — designed to land jobs, attract freelance clients, and establish a strong personal brand. The site is dark mode only, typographically bold, visually minimal with strong contrast, and animated using GSAP. All content is placeholder until replaced with real content. Simone Traversi is a software developer and industrial robotic specialist and trainer.
+A single-page personal portfolio website for Simone Traversi - designed to land jobs, attract freelance clients, and establish a strong personal brand. The site is dark mode only, typographically bold, visually minimal with strong contrast, and animated using GSAP. All content is placeholder until replaced with real content. Simone Traversi is a software developer and industrial robotic specialist and trainer.
 
 ---
 
@@ -11,7 +11,7 @@ A single-page personal portfolio website for Simone Traversi — designed to lan
 - Present Simone as a skilled, hireable engineer/designer with a distinct visual identity
 - Showcase projects, experience, and skills in a single-scroll experience
 - Provide downloadable resume and direct contact path
-- Load fast and feel polished — animations add energy, not noise
+- Load fast and feel polished - animations add energy, not noise
 - Deploy-ready on Vercel from the existing Next.js repo
 
 ---
@@ -95,7 +95,7 @@ A single-page personal portfolio website for Simone Traversi — designed to lan
 - [ ] Grid of project cards (2-3 columns desktop, 1 column mobile)
 - [ ] Each card contains: project image placeholder (16:9 aspect ratio, dark gray bg), title, short description (2 lines), tech tags, and a link icon/button ("View" or "GitHub")
 - [ ] At least 3 placeholder project cards
-- [ ] Cards have a subtle hover effect (border highlight or scale transform, no GSAP needed — CSS is fine)
+- [ ] Cards have a subtle hover effect (border highlight or scale transform, no GSAP needed - CSS is fine)
 - [ ] GSAP ScrollTrigger: cards stagger in as the section enters the viewport
 - [ ] Typecheck passes
 - [ ] Verify in browser using dev-browser skill
@@ -110,8 +110,8 @@ A single-page personal portfolio website for Simone Traversi — designed to lan
 
 - [ ] Section with id `resume`
 - [ ] Section headline: "Resume" or "CV"
-- [ ] A prominent download button: "Download PDF" — links to `/resume.pdf` in `public/` (placeholder PDF or empty file acceptable)
-- [ ] Below the button: an inline preview of key resume content — Skills list (grouped by category, e.g. Languages, Frameworks, Tools) and Education entry (placeholder)
+- [ ] A prominent download button: "Download PDF" - links to `/resume.pdf` in `public/` (placeholder PDF or empty file acceptable)
+- [ ] Below the button: an inline preview of key resume content - Skills list (grouped by category, e.g. Languages, Frameworks, Tools) and Education entry (placeholder)
 - [ ] Typecheck passes
 - [ ] Verify in browser using dev-browser skill
 
@@ -125,7 +125,7 @@ A single-page personal portfolio website for Simone Traversi — designed to lan
 
 - [ ] Section with id `contact`
 - [ ] Large heading (e.g. "Let's work together.")
-- [ ] Contact form with fields: Name, Email, Message — and a Submit button
+- [ ] Contact form with fields: Name, Email, Message - and a Submit button
 - [ ] Form is static/UI-only (no backend required); submit button shows a placeholder success state on click (e.g. "Message sent!" text swap)
 - [ ] Social links row below the form: GitHub, LinkedIn, Twitter/X (placeholder `href="#"`)
 - [ ] GSAP ScrollTrigger: heading animates in on scroll
@@ -165,20 +165,20 @@ A single-page personal portfolio website for Simone Traversi — designed to lan
 
 ## Functional Requirements
 
-- **FR-1:** The entire experience is a single HTML page (`/`) — no routing required
+- **FR-1:** The entire experience is a single HTML page (`/`) - no routing required
 - **FR-2:** GSAP is used for all entrance animations; CSS transitions are acceptable for hover states
 - **FR-3:** All GSAP ScrollTrigger animations must use `ScrollTrigger.refresh()` compatible patterns to avoid layout bugs
 - **FR-4:** All sections must have an `id` attribute matching their nav link anchor
 - **FR-5:** Color palette (exact values, no deviations):
-  - `#1A1A1A` — background (near-black)
-  - `#F4F4F4` — primary text (off-white)
-  - `#FF4400` — accent (orange); use on CTAs, hover states, timeline nodes, active nav links, highlights
-  - `#D1E0E8` — secondary/light surface (muted blue-grey); use for cards, section dividers, subtle backgrounds
-  - `#757575` — muted text (grey); use for dates, meta labels, secondary copy
+  - `#1A1A1A` - background (near-black)
+  - `#F4F4F4` - primary text (off-white)
+  - `#FF4400` - accent (orange); use on CTAs, hover states, timeline nodes, active nav links, highlights
+  - `#D1E0E8` - secondary/light surface (muted blue-grey); use for cards, section dividers, subtle backgrounds
+  - `#757575` - muted text (grey); use for dates, meta labels, secondary copy
 - **FR-6:** Typography: headlines use at minimum `text-6xl` (96px+), body uses `text-base` or `text-lg`
 - **FR-7:** All images use Next.js `<Image>` component with `placeholder="blur"` or a solid color fallback
-- **FR-8:** The resume PDF must be placed in `public/resume.pdf` — a blank placeholder file is acceptable
-- **FR-9:** The contact form does NOT require a backend — success state is simulated client-side
+- **FR-8:** The resume PDF must be placed in `public/resume.pdf` - a blank placeholder file is acceptable
+- **FR-9:** The contact form does NOT require a backend - success state is simulated client-side
 - **FR-10:** The site must be responsive: fully usable on 375px mobile through 1440px desktop
 
 ---
@@ -198,10 +198,10 @@ A single-page personal portfolio website for Simone Traversi — designed to lan
 
 ## Design Considerations
 
-- **Aesthetic reference:** Think editorial design — large type, generous whitespace, high contrast, intentional image placement
-- **Accent color:** `#FF4400` orange — used on CTA buttons, hover states, timeline nodes, active nav indicator, underlines, and any interactive highlight. Should feel energetic but not overused — max 20% of visible surface area
+- **Aesthetic reference:** Think editorial design - large type, generous whitespace, high contrast, intentional image placement
+- **Accent color:** `#FF4400` orange - used on CTA buttons, hover states, timeline nodes, active nav indicator, underlines, and any interactive highlight. Should feel energetic but not overused - max 20% of visible surface area
 - **Font:** A grotesque sans-serif for headings (Inter, DM Sans, or similar via `next/font`); no serif required
-- **Section spacing:** Each section should feel like its own "page" — use `py-24` or `py-32` minimum
+- **Section spacing:** Each section should feel like its own "page" - use `py-24` or `py-32` minimum
 - **Images:** Use `aspect-ratio` containers with `bg-neutral-900` as placeholder so layout is stable before real images are added
 
 ---
@@ -225,7 +225,7 @@ The site must work correctly at all three breakpoints using Tailwind's standard 
 - **Resume:** Skills groups stack vertically on mobile; 2-3 columns on desktop
 - **Contact:** Form is full-width on mobile; max-width constrained on desktop
 - **Nav:** Links hidden on mobile behind hamburger menu; full nav visible on tablet+; drawer/overlay closes on link click
-- **Typography:** All headlines must remain large and impactful even at 375px — never shrink below `text-4xl` for section headings
+- **Typography:** All headlines must remain large and impactful even at 375px - never shrink below `text-4xl` for section headings
 - **Touch targets:** All interactive elements (buttons, links, nav items) must be at least 44×44px on mobile
 - **No horizontal scroll:** The page must never overflow horizontally at any breakpoint
 
@@ -233,10 +233,10 @@ The site must work correctly at all three breakpoints using Tailwind's standard 
 
 ## Technical Considerations
 
-- **GSAP install:** `npm install gsap` — use `useGSAP` hook from `@gsap/react` for React integration and proper cleanup
+- **GSAP install:** `npm install gsap` - use `useGSAP` hook from `@gsap/react` for React integration and proper cleanup
 - **ScrollTrigger:** Must be registered via `gsap.registerPlugin(ScrollTrigger)` before use; do this once in a client component
 - **Next.js `"use client"`:** All GSAP animation components must be client components
-- **Tailwind v4:** Project uses Tailwind v4 — use `@import "tailwindcss"` in `globals.css`, not `@tailwind base/components/utilities`
+- **Tailwind v4:** Project uses Tailwind v4 - use `@import "tailwindcss"` in `globals.css`, not `@tailwind base/components/utilities`
 - **Smooth scroll:** Add `html { scroll-behavior: smooth; }` in globals
 - **Performance:** GSAP animations should use `will-change: transform` sparingly; avoid animating layout properties
 

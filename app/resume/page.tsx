@@ -89,29 +89,6 @@ export default function ResumePage() {
                   </div>
                 </div>
               ))}
-              <div className="resume-h3">Short-Term Collaborations</div>
-              {collaborations.map((entry) => (
-                <div key={entry.company} className="resume-exp-entry">
-                  <div className="resume-exp-with-icon">
-                    {entry.icon && (
-                      <Image src={entry.icon} alt={entry.company} width={28} height={28} className="resume-exp-icon" />
-                    )}
-                    <div style={{ flex: 1, minWidth: 0 }}>
-                      <div className="resume-exp-header">
-                        <span className="resume-exp-company">{entry.company}</span>
-                        <span className="resume-exp-dates">{entry.dates}</span>
-                      </div>
-                      <div className="resume-exp-role">{entry.role}</div>
-                      <div className="resume-exp-desc">{entry.resumeDesc ?? entry.description}</div>
-                      <ul className="resume-exp-bullets">
-                        {entry.bullets.map((bullet) => (
-                          <li key={bullet}>{bullet}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
         </div>
@@ -171,6 +148,24 @@ export default function ResumePage() {
 
           <div className="resume-col-right">
             <div className="resume-section">
+              <div className="resume-h2">Short-Term Collaborations</div>
+              {collaborations.map((entry) => (
+                <div key={entry.company} className="resume-exp-entry">
+                  <div className="resume-exp-with-icon">
+                    {entry.icon && (
+                      <Image src={entry.icon} alt={entry.company} width={28} height={28} className="resume-exp-icon" />
+                    )}
+                    <div style={{ flex: 1, minWidth: 0 }}>
+                      <div className="resume-exp-header">
+                        <span className="resume-exp-company">{entry.company}</span>
+                        <span className="resume-exp-dates">{entry.dates}</span>
+                      </div>
+                      <div className="resume-exp-role">{entry.role}</div>
+                      <div className="resume-exp-desc">{entry.resumeDesc ?? entry.description}</div>
+                    </div>
+                  </div>
+                </div>
+              ))}
               <div className="resume-h2">Projects</div>
               {projects.map((project) => (
                 <div key={project.slug} className="resume-project-entry">

@@ -1,7 +1,7 @@
 {
   "project": "simonetraversi",
   "branchName": "ralph/personal-portfolio",
-  "description": "Single-page personal portfolio website — dark mode, bold typography, GSAP animations, responsive. Sections: Hero, About, Experience/Timeline, Projects, Resume, Contact. Stack: Next.js + Tailwind v4 + GSAP.",
+  "description": "Single-page personal portfolio website - dark mode, bold typography, GSAP animations, responsive. Sections: Hero, About, Experience/Timeline, Projects, Resume, Contact. Stack: Next.js + Tailwind v4 + GSAP.",
   "userStories": [
     {
       "id": "US-001",

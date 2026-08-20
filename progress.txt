@@ -1,4 +1,4 @@
-## 2026-02-27 — US-001: Set up GSAP and global design tokens
+## 2026-02-27 - US-001: Set up GSAP and global design tokens
 
 **Status:** COMPLETE
 
@@ -9,9 +9,9 @@
 - Updated `app/layout.tsx`: switched to DM Sans font via next/font/google, lang="en", body has bg-[#1A1A1A] text-[#F4F4F4]
 - Emptied `app/page.tsx` to a single root `<div />` shell
 
-**Next up:** US-002 (Sticky navigation bar) — create components/Nav.tsx as 'use client', fixed top nav with scroll behavior, active section tracking via IntersectionObserver, mobile hamburger menu.
+**Next up:** US-002 (Sticky navigation bar) - create components/Nav.tsx as 'use client', fixed top nav with scroll behavior, active section tracking via IntersectionObserver, mobile hamburger menu.
 
-## 2026-02-27 — US-002: Sticky navigation bar
+## 2026-02-27 - US-002: Sticky navigation bar
 
 **Status:** COMPLETE
 
@@ -24,9 +24,9 @@
 - Updated `app/page.tsx` to import and render `<Nav />`
 - Typecheck passes, no tests configured
 
-**Next up:** US-003 (Hero section) — create components/Hero.tsx with full-viewport layout, large headline, tagline, CTA buttons, and GSAP entrance animation.
+**Next up:** US-003 (Hero section) - create components/Hero.tsx with full-viewport layout, large headline, tagline, CTA buttons, and GSAP entrance animation.
 
-## 2026-02-27 — US-003: Hero section
+## 2026-02-27 - US-003: Hero section
 
 **Status:** COMPLETE
 
@@ -43,9 +43,9 @@
 - Updated `app/page.tsx` to import and render `<Hero />` below `<Nav />`
 - Typecheck passes
 
-**Next up:** US-004 (About section) — create components/About.tsx with two-column layout, bio text, trait bullets, image placeholder, and GSAP ScrollTrigger animation.
+**Next up:** US-004 (About section) - create components/About.tsx with two-column layout, bio text, trait bullets, image placeholder, and GSAP ScrollTrigger animation.
 
-## 2026-02-27 — US-004: About section
+## 2026-02-27 - US-004: About section
 
 **Status:** COMPLETE
 
@@ -61,9 +61,9 @@
 - Updated `app/page.tsx` to import and render `<About />` below `<Hero />`
 - Typecheck passes
 
-**Next up:** US-005 (Experience/Timeline section) — create components/Experience.tsx with vertical timeline, dot nodes, staggered GSAP ScrollTrigger animation.
+**Next up:** US-005 (Experience/Timeline section) - create components/Experience.tsx with vertical timeline, dot nodes, staggered GSAP ScrollTrigger animation.
 
-## 2026-02-27 — US-005: Experience / Timeline section
+## 2026-02-27 - US-005: Experience / Timeline section
 
 **Status:** COMPLETE
 
@@ -80,9 +80,9 @@
 - Updated `app/page.tsx` to import and render `<Experience />` below `<About />`
 - Typecheck passes
 
-**Next up:** US-006 (Projects section) — create components/Projects.tsx with responsive grid, 3 project cards, tech tag pills, hover border effect, GSAP ScrollTrigger stagger animation.
+**Next up:** US-006 (Projects section) - create components/Projects.tsx with responsive grid, 3 project cards, tech tag pills, hover border effect, GSAP ScrollTrigger stagger animation.
 
-## 2026-02-27 — US-006: Projects section
+## 2026-02-27 - US-006: Projects section
 
 **Status:** COMPLETE
 
@@ -99,9 +99,9 @@
 - Updated `app/page.tsx` to import and render `<Projects />` below `<Experience />`
 - Typecheck passes
 
-**Next up:** US-007 (Resume section) — create components/Resume.tsx with download PDF button, skills block (3 groups × 4-5 tags), and education entry.
+**Next up:** US-007 (Resume section) - create components/Resume.tsx with download PDF button, skills block (3 groups × 4-5 tags), and education entry.
 
-## 2026-02-27 — US-007: Resume section
+## 2026-02-27 - US-007: Resume section
 
 **Status:** COMPLETE
 
@@ -117,9 +117,9 @@
 - Updated `app/page.tsx` to import and render `<Resume />` below `<Projects />`
 - Typecheck passes
 
-**Next up:** US-008 (Contact section) — create components/Contact.tsx with controlled form, social links, and GSAP ScrollTrigger heading animation.
+**Next up:** US-008 (Contact section) - create components/Contact.tsx with controlled form, social links, and GSAP ScrollTrigger heading animation.
 
-## 2026-02-27 — US-008: Contact section
+## 2026-02-27 - US-008: Contact section
 
 **Status:** COMPLETE
 
@@ -137,9 +137,9 @@
 - Updated `app/page.tsx` to import and render `<Contact />` below `<Resume />`
 - Typecheck passes
 
-**Next up:** US-009 (Footer) — create components/Footer.tsx with copyright text and back-to-top link.
+**Next up:** US-009 (Footer) - create components/Footer.tsx with copyright text and back-to-top link.
 
-## 2026-02-27 — US-009: Footer
+## 2026-02-27 - US-009: Footer
 
 **Status:** COMPLETE
 

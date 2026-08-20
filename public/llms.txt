@@ -21,12 +21,12 @@ Simone Traversi (born 1999, Turin, Italy) is a robotics software engineer and fu
 
 ## Notable Projects
 
-- **Speed Skiing Rear Fairings** — Aerodynamic fairings for the Speed Skiing World Cup using 3D scanning, Fusion 360, and CFD.
-- **Amazing Hand PWM Controller** — ESP32 robotic hand controller driving 4 fingers via 8 servo motors.
-- **AB Ski Lessons Zermatt** — Multilingual booking site and admin dashboard for a ski school (Next.js, Prisma, Stripe, PostgreSQL).
-- **ST-Keeb-67** — Handwired mechanical keyboard with plasma-cut inox frame and 3D printed split plate.
-- **ProjectaLogs** — Platform for managing 3D printing projects and clients (React, NestJS, Python).
-- **Warpato** — Design project exploring furniture shaped by material honesty and craft constraints.
+- **Speed Skiing Rear Fairings** - Aerodynamic fairings for the Speed Skiing World Cup using 3D scanning, Fusion 360, and CFD.
+- **Amazing Hand PWM Controller** - ESP32 robotic hand controller driving 4 fingers via 8 servo motors.
+- **AB Ski Lessons Zermatt** - Multilingual booking site and admin dashboard for a ski school (Next.js, Prisma, Stripe, PostgreSQL).
+- **ST-Keeb-67** - Handwired mechanical keyboard with plasma-cut inox frame and 3D printed split plate.
+- **ProjectaLogs** - Platform for managing 3D printing projects and clients (React, NestJS, Python).
+- **Warpato** - Design project exploring furniture shaped by material honesty and craft constraints.
 
 ## Contact & Links
 

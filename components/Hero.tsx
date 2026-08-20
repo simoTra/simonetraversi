@@ -102,7 +102,7 @@ export default function Hero() {
             <br />
             Hands-on with code, simulations, and real-world automation systems.
             <br />
-            From concept to deployment — always with intention.
+            From concept to deployment - always with intention.
           </p>
 
           <div ref={buttonsRef} className="flex flex-col md:flex-row gap-4">

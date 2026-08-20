@@ -101,7 +101,7 @@ export default function Cursor() {
         justifyContent: 'center',
       }}
     >
-      {/* White dot — default state */}
+      {/* White dot - default state */}
       <div
         ref={dotRef}
         style={{
@@ -112,7 +112,7 @@ export default function Cursor() {
           backgroundColor: '#F4F4F4',
         }}
       />
-      {/* Orange spinner — hover state, static */}
+      {/* Orange spinner - hover state, static */}
       <div
         ref={spinnerRef}
         style={{

@@ -4,10 +4,10 @@ Personal portfolio site built with Next.js, React, Tailwind CSS, and GSAP.
 
 ## Stack
 
-- **Next.js 16** — App Router
+- **Next.js 16** - App Router
 - **React 19**
 - **Tailwind CSS 4**
-- **GSAP 3.14** — scroll-triggered animations, SplitText, 3D tilt
+- **GSAP 3.14** - scroll-triggered animations, SplitText, 3D tilt
 
 ## Getting Started
 
@@ -53,4 +53,4 @@ components/
 
 ## Content
 
-All content (experience, projects, skills) is stored as literal arrays inside each component. Edit the arrays directly to update content — no CMS or database.
+All content (experience, projects, skills) is stored as literal arrays inside each component. Edit the arrays directly to update content - no CMS or database.
